@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "prompt": "who is sheharyar?",
+    "bios": [
+      "I build AI agents and the systems they run on.",
+      "I build the infrastructure LLM agents run on, from Rust to Kubernetes.",
+      "I build agents, then I measure why they fail."
+    ],
+    "alternatives": {
+      "build": [["build", 0.82], ["ship", 0.11], ["design", 0.04]],
+      "agents": [["agents", 0.64], ["systems", 0.21], ["products", 0.09]],
+      "run": [["run", 0.71], ["live", 0.17], ["scale", 0.08]],
+      "infrastructure": [["infrastructure", 0.58], ["platforms", 0.27], ["tooling", 0.09]],
+      "measure": [["measure", 0.69], ["test", 0.19], ["trust", 0.02]]
+    },
+    "altsLabel": "Other words the model almost picked",
+    "idleHint": "Hover an underlined word, or",
+    "regenLabel": "ask again",
+    "summary": "Lead engineer at Mavera for two years, on an AI platform used by 120+ companies. Now in the final year of an MSc in Computer Science at Sorbonne, Paris.",
+    "ctaPrimary": { "label": "Get in touch", "href": "#contact" },
+    "ctaSecondary": { "label": "Download CV", "href": "/cv/Sheharyar_Ishfaq_CV.pdf" },
+    "floatingCards": [
+      { "badge": "2y", "title": "Lead engineer", "sub": "Mavera, 2024 to 2026", "position": "top-left" },
+      { "dot": "green", "title": "Paris, France", "sub": "MSc at Sorbonne", "position": "bottom-right" }
+    ]
+  },
+  "logos": {
+    "lead": "Software I led is used by teams at",
+    "items": [
+      { "name": "Coca-Cola", "file": "/logos/coca-cola.svg" },
+      { "name": "Morningstar", "file": "/logos/morningstar.svg" },
+      { "name": "S&P Global", "file": "/logos/sp-global.svg" },
+      { "name": "Spotify", "file": "/logos/spotify.svg" }
+    ],
+    "note": "Use each company's official logo file from its brand or press page, render all four in one grey (Ink 2), never redraw them. Until the files are in /public/logos, show the names as text in the same grey."
+  },
+  "numbers": {
+    "title": "In numbers",
+    "items": [
+      { "value": 100, "prefix": "$", "suffix": "K+", "label": "Monthly revenue", "context": "Carried by the platform I led at Mavera." },
+      { "value": 165, "label": "Client projects", "context": "Shipped as a freelancer, rated 4.9." },
+      { "text": "1st", "label": "Mistral hackathon", "context": "LLM × Law, Paris, October 2026." },
+      { "text": "1/17", "label": "System Design", "context": "Top of the class at Sorbonne." }
+    ]
+  },
+  "attention": {
+    "title": "What each word is backed by",
+    "intro": "My one-line summary, read the way a language model reads it. Hover a word to see what it pays attention to.",
+    "tokens": ["Sheharyar", "builds", "LLM", "agents", "and", "the", "infra", "they", "run", "on"],
+    "autoplayOrder": [0, 3, 6, 1, 8, 2],
+    "smallWordNote": "is a small word, so it gets almost no attention.",
+    "smallWordHint": "Small words barely attend to anything. Try “agents” or “infra”.",
+    "map": {
+      "0": { "links": [[3, 0.38], [1, 0.34], [6, 0.18]], "note": "pulls on everything after it, the way a subject should.", "evidence": [["Lead engineer at Mavera", 0.31, "Two years, 120+ companies"], ["MSc at Sorbonne", 0.22, "Final year, Paris"], ["First place, Mistral hackathon", 0.19, "Team of five, October 2026"]] },
+      "1": { "links": [[3, 0.45], [0, 0.32], [6, 0.15]], "note": "is weighted by how much of it actually shipped.", "evidence": [["Mavera web platform", 0.34, "Built end to end, then led the team"], ["AIWrappers", 0.27, "Launched to paying customers"], ["Bina.ai backend", 0.21, "Built in a hackathon weekend"]] },
+      "2": { "links": [[3, 0.62], [1, 0.25]], "note": "points at the models I have put into production.", "evidence": [["OpenAI and Anthropic", 0.33, "In production at Mavera"], ["39 models, 5 providers", 0.29, "Behind one API in AIWrappers"], ["Mistral OCR and chat", 0.26, "Inside the Bina.ai backend"]] },
+      "3": { "links": [[2, 0.42], [1, 0.3], [8, 0.2]], "note": "means agents that call tools, read documents and stream answers.", "evidence": [["Mave Agent", 0.41, "A desktop agent in Rust"], ["MCP servers", 0.24, "Tools for meetings and video"], ["AIWrappers creator agent", 0.2, "Builds apps from a description"]] },
+      "6": { "links": [[3, 0.4], [8, 0.38], [1, 0.14]], "note": "is where the agents run, and what I am studying next.", "evidence": [["Kubernetes on AWS", 0.38, "Operated at Mavera"], ["CUDA and MPI", 0.22, "Sorbonne M2, this year"], ["Caracat at LIP6", 0.2, "Rust networking, 86/100"]] },
+      "8": { "links": [[6, 0.46], [3, 0.32], [7, 0.12]], "note": "means real users depending on it.", "evidence": [["120+ companies", 0.42, "Using Mavera every day"], ["$100K+ a month", 0.28, "Revenue the platform carried"], ["16 restaurants", 0.18, "Running on the Gourmet Gulf platform"]] }
+    },
+    "disclaimer": "Weights are hand-set to tell the story, not output from a real model. Do not label them as model output anywhere."
+  },
+  "recommendations": {
+    "title": "What people I've worked with say",
+    "items": [
+      { "quote": "He moves quickly, asks sharp questions, and has a strong ability to take early ideas or partial direction and turn them into well-structured, working systems.", "name": "Jill Axline, PhD", "role": "Co-founder and CEO, Mavera", "style": "featured" },
+      { "quote": "Sheharyar is the kind of person you can trust with the hard stuff. He's thoughtful, dependable, and quietly makes everyone around him better.", "name": "Bill Hickman", "role": "Founder, Hybrid Minds; former Chief Growth Officer, Leo Burnett Worldwide", "style": "plain" }
+    ],
+    "more": { "label": "Read the full recommendations on LinkedIn", "href": "https://www.linkedin.com/in/sheharyar-ishfaq/details/recommendations/" }
+  },
+  "now": {
+    "title": "Now",
+    "sub": "Sorbonne Université, 2025 to 2027",
+    "text": "This year I'm going below the agents: GPU programming in CUDA, parallel computing with MPI, and deep learning for vision. Last year I ranked first of seventeen in System Design and validated a Rust traceroute engine at the LIP6 lab.",
+    "kernelLabel": "render_name<<<7, 72>>>",
+    "caption": "A tiny CUDA kernel: 504 threads in 7 blocks, each lighting one dot.",
+    "button": "Run it again"
+  },
+  "writing": {
+    "title": "Writing",
+    "sub": "Things I built, then explained.",
+    "items": [
+      { "title": "Uploading 20 to 30 GB files to S3, straight from the browser", "summary": "Signed URLs, 10 MB chunks and S3 multipart uploads, with React, Node.js and MongoDB. Full code on GitHub.", "metric": "85K", "metricLabel": "views on LinkedIn", "href": "TODO: Medium article URL", "repo": "https://github.com/sheharyarIshfaq/s3-large-file-uploader", "featured": true },
+      { "title": "TODO: Medium article title", "date": "TODO", "href": "TODO" },
+      { "title": "TODO: Medium article title", "date": "TODO", "href": "TODO" }
+    ]
+  },
+  "about": {
+    "title": "I like knowing what happens under the button.",
+    "text": "I started freelancing in the second year of my degree and shipped 165 projects for clients. Then came an operations platform for a restaurant group in Dubai, a document editor for researchers in Finland, and two years leading engineering at Mavera, all remotely, before I moved to Paris for my master's.",
+    "facts": [
+      ["Based in", "Paris"],
+      ["Languages", "English, French (learning)"],
+      ["Strengths", "LLM agents, retrieval, Rust, Kubernetes"],
+      ["Learning", "CUDA, MPI, PyTorch"],
+      ["Available", "From 15 February 2027"],
+      ["Paperwork", "Convention de stage"]
+    ]
+  },
+  "contact": {
+    "title": "Let's build something together.",
+    "text": "Six-month internship in Paris from 15 February 2027. Sorbonne signs the convention de stage, so there's no visa paperwork on your side. I reply within a day.",
+    "copyLabel": "Copy my email",
+    "copiedLabel": "Email copied"
+  },
+  "footer": {
+    "left": "Sheharyar Ishfaq, Paris",
+    "right": { "text": "Also runs", "link": "Aivex Labs", "href": "https://aivex.co" }
+  }
+}

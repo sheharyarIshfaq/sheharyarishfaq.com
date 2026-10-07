@@ -1,0 +1,37 @@
+{
+  "title": "Everything I've built, on one map",
+  "intro": "Placed by what each project is about, the way an embedding model would. Each small dot is one of 165 freelance projects.",
+  "footnote": "Positions and scores come from embeddings of each project write-up.",
+  "filters": [
+    ["all", "Everything"], ["a", "Agents and LLMs"], ["s", "Systems and research"], ["m", "Machine learning"], ["p", "Product engineering"]
+  ],
+  "clusterLabels": [
+    { "cluster": "a", "label": "Agents and LLMs", "x": 64, "y": 6 },
+    { "cluster": "s", "label": "Systems and research", "x": 84, "y": 50 },
+    { "cluster": "m", "label": "Machine learning", "x": 16, "y": 86 },
+    { "cluster": "p", "label": "Product engineering", "x": 10, "y": 12 }
+  ],
+  "regions": [
+    { "cluster": "a", "cx": 68, "cy": 34, "w": 50, "h": 50 },
+    { "cluster": "s", "cx": 82, "cy": 72, "w": 34, "h": 40 },
+    { "cluster": "m", "cx": 36, "cy": 86, "w": 26, "h": 22 },
+    { "cluster": "p", "cx": 33, "cy": 50, "w": 46, "h": 64 }
+  ],
+  "freelanceCloud": { "count": 165, "centerX": 25, "centerY": 54, "spreadX": 13, "spreadY": 19, "yearsFrom": 2022, "yearsTo": 2025, "cluster": "p", "seed": 7 },
+  "years": [2020, 2021, 2022, 2023, 2024, 2025, 2026],
+  "points": [
+    { "id": 0, "name": "Mavera", "x": 62, "y": 38, "size": 22, "cluster": "a", "year": 2024, "tag": "Lead engineer", "desc": "AI market-intelligence platform. I built it end to end, then led the developers who joined.", "metric": ["120+", "companies using it"], "stack": ["Next.js", "Rust", "MCP", "Kubernetes"], "neighbours": [[1, 0.91], [2, 0.86], [5, 0.79]], "cta": ["Read the case study", "/work/mavera"] },
+    { "id": 1, "name": "Mave Agent", "x": 75, "y": 25, "size": 15, "cluster": "a", "year": 2025, "tag": "Desktop agent", "desc": "Tool calling, retrieval and streaming in a native app written in Rust with Tauri.", "metric": ["Rust", "desktop app"], "stack": ["Rust", "Tauri", "RAG", "Streaming"], "neighbours": [[0, 0.91], [2, 0.84], [3, 0.72]], "cta": ["Read the case study", "/work/mavera"] },
+    { "id": 2, "name": "MCP servers", "x": 66, "y": 52, "size": 12, "cluster": "a", "year": 2025, "tag": "Mavera pipelines", "desc": "Servers and jobs the agent calls to read reports, meetings and videos.", "metric": ["MCP", "tools for agents"], "stack": ["MCP", "Trigger.dev", "Python", "OpenCV"], "neighbours": [[0, 0.86], [1, 0.84], [5, 0.70]], "cta": ["Read the case study", "/work/mavera"] },
+    { "id": 3, "name": "AIWrappers", "x": 51, "y": 21, "size": 16, "cluster": "a", "year": 2025, "tag": "Client SaaS", "desc": "Describe a tool in plain words and an agent builds it as a web app on your own domain.", "metric": ["39", "models behind one API"], "stack": ["Next.js", "PostgreSQL", "Stripe Connect"], "neighbours": [[1, 0.72], [0, 0.70], [9, 0.58]], "cta": ["Watch the demo", "https://www.youtube.com/watch?v=U9hBx-xnyeM"] },
+    { "id": 4, "name": "Bina.ai", "x": 86, "y": 15, "size": 16, "cluster": "a", "year": 2026, "tag": "Mistral hackathon", "desc": "Briefs for litigation funders, with every quote checked word for word against the ruling.", "metric": ["1st", "place, team of five"], "stack": ["TypeScript", "Express", "Mistral API"], "neighbours": [[3, 0.66], [0, 0.64], [1, 0.61]], "cta": ["See the project", "/work/bina"] },
+    { "id": 5, "name": "Kubernetes", "x": 73, "y": 71, "size": 13, "cluster": "s", "year": 2024, "tag": "Infrastructure at Mavera", "desc": "Containerised services on AWS that I operated as the platform grew.", "metric": ["K8s", "on AWS"], "stack": ["Kubernetes", "EC2", "RDS", "S3"], "neighbours": [[0, 0.79], [2, 0.70], [6, 0.55]], "cta": ["Read the case study", "/work/mavera"] },
+    { "id": 6, "name": "Caracat at LIP6", "x": 86, "y": 82, "size": 13, "cluster": "s", "year": 2026, "tag": "Research project", "desc": "A Rust traceroute engine validated against its C++ predecessor, supervised by Timur Friedman.", "metric": ["86", "out of 100, 3rd of 12"], "stack": ["Rust", "C++", "Networking"], "neighbours": [[7, 0.68], [5, 0.55], [8, 0.44]], "cta": ["Read the report", "/work/caracat"] },
+    { "id": 7, "name": "CUDA and MPI", "x": 91, "y": 61, "size": 11, "cluster": "s", "year": 2026, "tag": "Sorbonne M2", "desc": "GPU programming and parallel computing this year. Top of the class in System Design last year.", "metric": ["1/17", "in System Design"], "stack": ["CUDA", "MPI", "PyTorch"], "neighbours": [[6, 0.68], [5, 0.60], [8, 0.52]], "cta": ["See my courses", "/research"] },
+    { "id": 8, "name": "BirdCLEF+", "x": 36, "y": 87, "size": 13, "cluster": "m", "year": 2026, "tag": "Machine learning", "desc": "Classical ML on 35.5K recordings of 206 bird species, five models benchmarked.", "metric": ["0.922", "macro ROC-AUC"], "stack": ["Python", "scikit-learn", "librosa"], "neighbours": [[7, 0.52], [6, 0.44], [11, 0.30]], "cta": ["See the code", "https://github.com/sheharyarIshfaq/birdclef-2026-classical-ml"] },
+    { "id": 9, "name": "Aveksana", "x": 45, "y": 32, "size": 13, "cluster": "p", "year": 2024, "tag": "Full-stack", "desc": "The document editor researchers use to write theses and proposals.", "metric": ["10K+", "users, retention +30%"], "stack": ["React", "Node.js"], "neighbours": [[11, 0.74], [10, 0.66], [3, 0.58]], "cta": ["Read more", "https://aveksana.com"] },
+    { "id": 10, "name": "Gourmet Gulf", "x": 45, "y": 66, "size": 13, "cluster": "p", "year": 2023, "tag": "Full-stack", "desc": "Operations platform for a restaurant group across the UAE, Qatar and Saudi Arabia.", "metric": ["16", "restaurants + 3 kitchens"], "stack": ["Node.js", "Redis", "BullMQ"], "neighbours": [[11, 0.77], [9, 0.66], [5, 0.48]], "cta": ["Read more", "#"] },
+    { "id": 11, "name": "165 freelance projects", "x": 25, "y": 30, "size": 11, "cluster": "p", "year": 2022, "tag": "Freelance", "desc": "Web and AI builds for international clients, from voice-AI receptionists to RAG chatbots.", "metric": ["4.9", "rating over 250 orders"], "stack": ["React", "Next.js", "Node.js", "MongoDB"], "neighbours": [[10, 0.77], [9, 0.74], [3, 0.50]], "cta": ["See reviews", "https://www.fiverr.com/sheharyar__"] }
+  ],
+  "realEmbeddings": "Phase 2 (optional): write a 100-200 word description per point, embed with all-MiniLM-L6-v2 at build time, project to 2D with UMAP, and use cosine similarity for neighbours. Keep the hand-set positions as the fallback and keep cluster labels readable."
+}

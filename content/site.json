@@ -1,0 +1,39 @@
+{
+  "name": "Sheharyar Ishfaq",
+  "shortName": "Sheharyar",
+  "role": "AI engineer",
+  "location": "Paris, France",
+  "email": "sheharyarishfaq@gmail.com",
+  "availability": {
+    "pill": "Open to a six-month internship from 15 February 2027",
+    "start": "2027-02-15",
+    "length": "6 months",
+    "where": "Paris, on site or hybrid",
+    "paperwork": "Sorbonne signs the convention de stage, so there's no visa paperwork on your side."
+  },
+  "seo": {
+    "title": "Sheharyar Ishfaq — AI engineer, LLM agents and the systems they run on",
+    "description": "Lead engineer at Mavera for two years on an AI platform used by 120+ companies. MSc Computer Science at Sorbonne, Paris. Open to a six-month internship from February 2027.",
+    "alternateNames": ["Sheharyar", "Sherry"]
+  },
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/sheharyar-ishfaq/",
+    "github": "https://github.com/sheharyarIshfaq",
+    "medium": "TODO: your Medium profile URL",
+    "fiverr": "https://www.fiverr.com/sheharyar__",
+    "aivex": "https://aivex.co",
+    "cv": "/cv/Sheharyar_Ishfaq_CV.pdf",
+    "cvAcademic": "/cv/Sheharyar_Ishfaq_CV_academic.pdf"
+  },
+  "nav": [
+    { "label": "Work", "href": "/#work" },
+    { "label": "Everything", "href": "/#map" },
+    { "label": "About", "href": "/#about" },
+    { "label": "CV", "href": "/cv/Sheharyar_Ishfaq_CV.pdf" }
+  ],
+  "images": {
+    "hero": { "src": "/images/hero-hangar.jpg", "alt": "Sheharyar Ishfaq in a hangar beside a Rafale prototype", "objectPosition": "50% 72%" },
+    "about": { "src": "/images/about-big.jpg", "alt": "Sheharyar Ishfaq at the BIG event in Paris", "objectPosition": "14% 50%", "caption": "At BIG, Paris." },
+    "formal": { "src": "/images/portrait-formal.jpg", "alt": "Sheharyar Ishfaq, portrait", "note": "Not used on the homepage. Keep for press, applications or the /hire page if needed." }
+  }
+}
