@@ -1,0 +1,98 @@
+/* Fonts come from next/font, which sets --font-archivo and --font-doto on <html>. */
+
+:root {
+  --paper: #FAFBFC;      /* page background */
+  --card: #FFFFFF;       /* cards */
+  --panel: #F2F5FC;      /* figures and interactive areas */
+  --ink: #1B2333;        /* all text */
+  --ink-2: #5B6578;      /* secondary text, captions */
+  --line: #E3E7EE;       /* borders, dividers */
+  --plate-line: #D5DCE8; /* borders inside figures */
+  --part: #E8EEF9;       /* shapes inside figures */
+  --dot: #C9D2E3;        /* freelance dots on the map */
+  --blue: #2F6BE4;       /* the one accent: actions, selected, data */
+  --blue-text: #2459C4;  /* blue used as text on light */
+  --tint: #EAF0FC;       /* chips, pills */
+  --soft: #D6E2FA;       /* highlights, heat, regions, underlines */
+  --warm: #F2A65A;       /* wins only */
+  --warm-tint: #FDF0E3;
+  --warm-text: #A55A12;
+  --green: #2FA36B;      /* available, healthy */
+  --on-blue: #FFFFFF;
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-num: var(--font-doto), ui-monospace, monospace;
+
+  --radius-sm: 12px;   /* buttons */
+  --radius-md: 16px;   /* small cards, inner cards */
+  --radius-lg: 22px;   /* cards, figures */
+  --radius-xl: 28px;   /* big panels */
+  --radius-2xl: 32px;  /* contact card, hero photo */
+  --radius-pill: 999px;
+
+  --shadow-float: 0 12px 30px rgba(20, 30, 60, 0.10);
+  --shadow-photo: 0 24px 60px rgba(20, 30, 60, 0.14);
+
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --dur-state: 300ms;
+  --dur-enter: 900ms;
+
+  --container: 1200px;
+  --gutter: 40px;          /* 20px under 640px */
+  --section-gap: 120px;    /* 80px under 768px */
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #11161F;
+  --card: #202B3F;
+  --panel: #18212F;
+  --ink: #E6E9EF;
+  --ink-2: #9AA4B5;
+  --line: #2A3446;
+  --plate-line: #4A5B7A;
+  --part: #2D3B55;
+  --dot: #3A4862;
+  --blue: #6E9BF4;
+  --blue-text: #93B4F7;
+  --tint: #1B2740;
+  --soft: #2B4170;
+  --warm: #F2B676;
+  --warm-tint: #33261A;
+  --warm-text: #F4C590;
+  --green: #4CC38A;
+  --on-blue: #11161F; /* white on this blue is under 4.5:1 */
+  --shadow-float: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --shadow-photo: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    /* same values as [data-theme="dark"]; keep both blocks in sync */
+    --paper: #11161F;
+    --card: #202B3F;
+    --panel: #18212F;
+    --ink: #E6E9EF;
+    --ink-2: #9AA4B5;
+    --line: #2A3446;
+    --plate-line: #4A5B7A;
+    --part: #2D3B55;
+    --dot: #3A4862;
+    --blue: #6E9BF4;
+    --blue-text: #93B4F7;
+    --tint: #1B2740;
+    --soft: #2B4170;
+    --warm: #F2B676;
+    --warm-tint: #33261A;
+    --warm-text: #F4C590;
+    --green: #4CC38A;
+    --on-blue: #11161F;
+    --shadow-float: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --shadow-photo: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Type scale (px): hero 60, section 46, project 40, card 22, body 19, secondary 15, label 13.
+   Headlines: Archivo 850, font-stretch 118%, letter-spacing -0.045em, line-height 1.02-1.04.
+   Body: Archivo 400, 19px, line-height 1.65. Doto 900 only for numbers, scores, years and project numbers. */
