@@ -1,0 +1,26 @@
+# Sheharyar Ishfaq
+
+> AI engineer in Paris. Lead engineer at Mavera for two years on an AI platform used by 120+ companies. MSc Computer Science at Sorbonne, Paris. Open to a six-month internship from 15 February 2027.
+
+I build AI agents and the systems they run on.
+
+## Availability
+
+- Six-month internship in Paris, on site or hybrid, from 15 February 2027.
+- Sorbonne signs the convention de stage, so there's no visa paperwork on your side.
+- Email: sheharyarishfaq@gmail.com
+
+## Selected work
+
+- Mavera (lead software engineer, 2024 to 2026): AI market-intelligence platform used by 120+ companies. Built it end to end, then led the developers who joined. Next.js, Rust, MCP, Kubernetes.
+- Bina.ai (Mistral LLM × Law Hackathon, Paris, October 2026, first place, team of five): briefs for litigation funders, with every quote checked word for word against the ruling.
+- AIWrappers (client project, 2025): an agent builds AI tools as web apps on the customer's own domain, over 39 models from five providers behind one API.
+- Caracat at LIP6 (research project, 2026): a Rust traceroute engine validated against its C++ predecessor. Graded 86/100, third of twelve.
+- BirdCLEF+ 2026 (machine learning): classical ML on 35.5K recordings of 206 bird species, 0.922 macro ROC-AUC.
+
+## Links
+
+- LinkedIn: https://www.linkedin.com/in/sheharyar-ishfaq/
+- GitHub: https://github.com/sheharyarIshfaq
+- Fiverr: https://www.fiverr.com/sheharyar__
+- Aivex Labs: https://aivex.co
