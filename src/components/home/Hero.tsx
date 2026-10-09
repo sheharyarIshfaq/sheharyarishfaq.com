@@ -2,6 +2,7 @@ import home from "@content/home.json";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { isAvailable } from "@/lib/files";
 import { site } from "@/lib/site";
+import { HeroHeadline } from "./HeroHeadline";
 import { HeroPhoto } from "./HeroPhoto";
 
 export function Hero() {
@@ -20,7 +21,13 @@ export function Hero() {
           </span>{" "}
           {hero.prompt}
         </p>
-        <h1 className="text-[40px] leading-[1.04] md:text-[60px] lg:min-h-[190px]">{hero.bios[0]}</h1>
+        <HeroHeadline
+          bios={hero.bios}
+          alternatives={hero.alternatives}
+          altsLabel={hero.altsLabel}
+          idleHint={hero.idleHint}
+          regenLabel={hero.regenLabel}
+        />
         <p className="max-w-[520px] text-[17px] leading-[1.6] text-ink-2">{hero.summary}</p>
         <div className="flex flex-wrap gap-2.5">
           <ButtonLink href={hero.ctaPrimary.href}>{hero.ctaPrimary.label}</ButtonLink>

@@ -23,14 +23,15 @@ export function HeroPhoto() {
           fill
           priority
           sizes="(min-width: 768px) 560px, 100vw"
-          className="object-cover"
+          className="animate-settle object-cover"
           style={{ objectPosition: hero.objectPosition }}
         />
       </div>
-      {home.hero.floatingCards.map((card) => (
+      {home.hero.floatingCards.map((card, index) => (
         <span
           key={card.title}
-          className={`absolute flex items-center gap-2.5 rounded-[18px] border border-line bg-card py-2.5 pr-3.5 pl-2.5 shadow-(--shadow-float) ${cardPositions[card.position as keyof typeof cardPositions]}`}
+          style={{ animationDelay: `${300 + index * 150}ms` }}
+          className={`absolute flex animate-rise-in items-center gap-2.5 rounded-[18px] border border-line bg-card py-2.5 pr-3.5 pl-2.5 shadow-(--shadow-float) ${cardPositions[card.position as keyof typeof cardPositions]}`}
         >
           {card.badge ? (
             <span className="font-num inline-flex size-[30px] items-center justify-center rounded-[10px] bg-tint text-[13px] text-blue-text">
