@@ -1,4 +1,5 @@
 import { JsonLd } from "@/components/JsonLd";
+import { Hero } from "@/components/home/Hero";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 import { profilePage } from "@/lib/structured-data";
@@ -12,7 +13,9 @@ export const metadata = pageMetadata({
 export default function Home() {
   return (
     <>
-      <main id="main" className="container-page min-h-[60vh]" />
+      <main id="main" className="container-page">
+        <Hero />
+      </main>
       <JsonLd data={profilePage()} />
     </>
   );
