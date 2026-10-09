@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
 export default function Home() {
   return (
     <>
-      <main />
+      <main id="main" className="container-page min-h-[60vh]" />
       <JsonLd data={profilePage()} />
     </>
   );

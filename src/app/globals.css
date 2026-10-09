@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
+/* Dark when chosen with the toggle, or when the system is dark and nothing was chosen. */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+}
+
 @theme inline {
   --color-paper: var(--paper);
   --color-card: var(--card);
@@ -35,6 +48,18 @@
   padding-inline: var(--gutter);
 }
 
+@utility text-link {
+  text-decoration-line: underline;
+  text-decoration-color: var(--soft);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-state) var(--ease), color var(--dur-state) var(--ease);
+
+  &:hover {
+    text-decoration-color: var(--blue);
+  }
+}
+
 @utility headline {
   font-weight: 850;
   font-stretch: 118%;
@@ -59,6 +84,7 @@
     background: var(--paper);
     color-scheme: light;
     scroll-behavior: smooth;
+    scroll-padding-top: 96px;
   }
 
   body {

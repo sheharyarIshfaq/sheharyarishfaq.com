@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Doto } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/layout/SiteHeader";
 import { pageMetadata } from "@/lib/metadata";
 import { site, SITE_URL } from "@/lib/site";
 import { website } from "@/lib/structured-data";
@@ -54,7 +56,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
+        <a
+          href="#main"
+          className="sr-only rounded-sm bg-blue px-4 py-3 font-semibold text-on-blue focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
         <JsonLd data={{ "@context": "https://schema.org", ...website }} />
       </body>
     </html>
