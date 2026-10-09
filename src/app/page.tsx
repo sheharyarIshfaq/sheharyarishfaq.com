@@ -1,5 +1,7 @@
 import { JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/home/Hero";
+import { LogoStrip } from "@/components/home/LogoStrip";
+import { Numbers } from "@/components/home/Numbers";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 import { profilePage } from "@/lib/structured-data";
@@ -15,6 +17,8 @@ export default function Home() {
     <>
       <main id="main" className="container-page">
         <Hero />
+        <LogoStrip />
+        <Numbers />
       </main>
       <JsonLd data={profilePage()} />
     </>
