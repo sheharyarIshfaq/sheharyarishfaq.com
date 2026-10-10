@@ -1,4 +1,5 @@
 import { JsonLd } from "@/components/JsonLd";
+import { Attention } from "@/components/home/Attention";
 import { Hero } from "@/components/home/Hero";
 import { LogoStrip } from "@/components/home/LogoStrip";
 import { Numbers } from "@/components/home/Numbers";
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <LogoStrip />
         <Numbers />
+        <Attention />
       </main>
       <JsonLd data={profilePage()} />
     </>
