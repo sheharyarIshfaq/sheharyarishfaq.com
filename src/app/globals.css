@@ -110,6 +110,13 @@
   }
 }
 
+/* Bars and similar marks start collapsed when JavaScript will grow them in. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-js] [data-grow]:not([data-grow="done"]) {
+    scale: 0 1;
+  }
+}
+
 @keyframes reveal {
   to {
     visibility: visible;

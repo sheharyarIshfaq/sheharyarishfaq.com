@@ -1,6 +1,9 @@
+import { TraceFigure } from "@/components/figures/lazy";
+import { DEFAULT_SPAN, TraceView } from "@/components/figures/TraceView";
+import { WhenVisible } from "@/components/WhenVisible";
 import { FigureFrame } from "@/components/ui/FigureFrame";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { paragraphText, projects, work, type Project } from "@/lib/work";
+import { paragraphText, projects, work, type Project, type TraceProject } from "@/lib/work";
 import { ProjectIntro } from "./ProjectIntro";
 
 export function SelectedWork() {
@@ -16,8 +19,7 @@ export function SelectedWork() {
           <ProjectIntro project={project} />
           <div className="flex flex-col gap-6">
             {project.context && <p className="text-[15px] leading-normal text-ink-2">{project.context}</p>}
-            <p className="max-w-[68ch] text-[17px] leading-[1.65] md:text-[19px]">{paragraphText(project.paragraph)}</p>
-            <ProjectFigure project={project} />
+            <ProjectBody project={project} />
           </div>
         </article>
       ))}
@@ -25,10 +27,25 @@ export function SelectedWork() {
   );
 }
 
-function ProjectFigure({ project }: { project: Project }) {
+function ProjectBody({ project }: { project: Project }) {
+  if (project.figure === "trace") {
+    return (
+      <WhenVisible className="flex flex-col gap-6" fallback={<TraceView project={project} active={DEFAULT_SPAN} grown={false} />}>
+        <TraceFigure project={project} />
+      </WhenVisible>
+    );
+  }
+
+  return (
+    <>
+      <p className="max-w-[68ch] text-[17px] leading-[1.65] md:text-[19px]">{paragraphText(project.paragraph)}</p>
+      <ProjectFigure project={project} />
+    </>
+  );
+}
+
+function ProjectFigure({ project }: { project: Exclude<Project, TraceProject> }) {
   switch (project.figure) {
-    case "trace":
-      return <FigureFrame caption={project.traceCaption} className="min-h-[260px]" />;
     case "quote-check":
       return <FigureFrame caption={project.quoteCheck.caption} className="min-h-[260px]" />;
     case "fan-out":
