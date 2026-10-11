@@ -1,7 +1,8 @@
-import { TraceFigure } from "@/components/figures/lazy";
+import { FanOut } from "@/components/figures/FanOut";
+import { QuoteCheckFigure, TraceFigure } from "@/components/figures/lazy";
+import { QuoteCheckView } from "@/components/figures/QuoteCheckView";
 import { DEFAULT_SPAN, TraceView } from "@/components/figures/TraceView";
 import { WhenVisible } from "@/components/WhenVisible";
-import { FigureFrame } from "@/components/ui/FigureFrame";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { paragraphText, projects, work, type Project, type TraceProject } from "@/lib/work";
 import { ProjectIntro } from "./ProjectIntro";
@@ -47,8 +48,12 @@ function ProjectBody({ project }: { project: Project }) {
 function ProjectFigure({ project }: { project: Exclude<Project, TraceProject> }) {
   switch (project.figure) {
     case "quote-check":
-      return <FigureFrame caption={project.quoteCheck.caption} className="min-h-[260px]" />;
+      return (
+        <WhenVisible fallback={<QuoteCheckView data={project.quoteCheck} checked={false} />}>
+          <QuoteCheckFigure data={project.quoteCheck} />
+        </WhenVisible>
+      );
     case "fan-out":
-      return <FigureFrame caption={project.fanOut.caption} className="h-[290px]" />;
+      return <FanOut data={project.fanOut} />;
   }
 }

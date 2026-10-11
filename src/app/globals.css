@@ -117,6 +117,40 @@
   }
 }
 
+@keyframes packet {
+  0% {
+    left: var(--x0);
+    top: var(--y0);
+    opacity: 0;
+  }
+  10%,
+  88% {
+    opacity: 1;
+  }
+  35% {
+    left: var(--x1);
+    top: var(--y1);
+  }
+  70% {
+    left: var(--x2);
+    top: var(--y2);
+  }
+  100% {
+    left: var(--x3);
+    top: var(--y3);
+    opacity: 0;
+  }
+}
+
+/* Looping decorations run only while their figure is on screen. */
+[data-loop] {
+  animation-play-state: paused;
+}
+
+[data-playing] [data-loop] {
+  animation-play-state: running;
+}
+
 @keyframes reveal {
   to {
     visibility: visible;
