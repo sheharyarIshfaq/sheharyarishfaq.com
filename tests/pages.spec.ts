@@ -30,7 +30,7 @@ for (const path of paths) {
           const { violations } = await new AxeBuilder({ page })
             .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
             .analyze();
-          expect(violations.map((violation) => `${violation.id}: ${violation.help}`)).toEqual([]);
+          expect(violations.map((violation) => `${violation.id}: ${violation.help} (${violation.nodes.map((node) => node.target.join(" ")).join(", ")})`)).toEqual([]);
         });
       }
     });
