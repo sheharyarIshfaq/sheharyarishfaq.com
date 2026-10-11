@@ -3,6 +3,7 @@ import { Attention } from "@/components/home/Attention";
 import { Hero } from "@/components/home/Hero";
 import { LogoStrip } from "@/components/home/LogoStrip";
 import { Numbers } from "@/components/home/Numbers";
+import { Recommendations } from "@/components/home/Recommendations";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -23,6 +24,7 @@ export default function Home() {
         <Numbers />
         <Attention />
         <SelectedWork />
+        <Recommendations />
       </main>
       <JsonLd data={profilePage()} />
     </>
