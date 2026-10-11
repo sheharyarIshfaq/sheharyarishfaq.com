@@ -8,6 +8,7 @@ import type { QuoteCheckProject, TraceProject } from "@/lib/work";
 const Attention = lazy(() => import("./AttentionFigure"));
 const Trace = lazy(() => import("./TraceFigure"));
 const QuoteCheck = lazy(() => import("./QuoteCheckFigure"));
+const ProjectMap = lazy(() => import("./map/MapFigure"));
 
 export function AttentionFigure() {
   return <Attention />;
@@ -19,4 +20,8 @@ export function TraceFigure({ project }: { project: TraceProject }) {
 
 export function QuoteCheckFigure({ data }: { data: QuoteCheckProject["quoteCheck"] }) {
   return <QuoteCheck data={data} />;
+}
+
+export function MapFigure() {
+  return <ProjectMap />;
 }
