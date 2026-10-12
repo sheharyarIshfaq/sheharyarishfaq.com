@@ -10,6 +10,7 @@ const Trace = lazy(() => import("./TraceFigure"));
 const QuoteCheck = lazy(() => import("./QuoteCheckFigure"));
 const ProjectMap = lazy(() => import("./map/MapFigure"));
 const Kernel = lazy(() => import("./KernelFigure"));
+const Exploded = lazy(() => import("./ExplodedFigure"));
 
 export function AttentionFigure() {
   return <Attention />;
@@ -29,4 +30,8 @@ export function MapFigure() {
 
 export function KernelFigure(props: { label: string; caption: string; button: string }) {
   return <Kernel {...props} />;
+}
+
+export function ExplodedFigure() {
+  return <Exploded />;
 }

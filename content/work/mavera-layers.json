@@ -1,0 +1,98 @@
+{
+  "title": "How it fits together",
+  "intro": "Hover a layer.",
+  "layers": [
+    {
+      "title": "Cluster",
+      "description": "Every service runs in containers on Kubernetes, on AWS. I operated it as the platform grew.",
+      "stack": ["Kubernetes", "EC2", "RDS", "S3", "CI/CD"],
+      "parts": [
+        [28, 28, 50, 50, "", ""],
+        [62, 34, 9, 9, "c", "a"],
+        [100, 28, 50, 50, "", ""],
+        [134, 34, 9, 9, "c", "w"],
+        [172, 28, 50, 50, "", ""],
+        [206, 34, 9, 9, "c", "a"],
+        [28, 100, 50, 50, "", ""],
+        [62, 106, 9, 9, "c", "w"],
+        [100, 100, 50, 50, "", ""],
+        [134, 106, 9, 9, "c", "a"],
+        [172, 100, 50, 50, "", ""],
+        [206, 106, 9, 9, "c", "a"],
+        [28, 172, 50, 50, "", ""],
+        [62, 178, 9, 9, "c", "a"],
+        [100, 172, 50, 50, "", ""],
+        [134, 178, 9, 9, "c", "a"],
+        [172, 172, 50, 50, "", ""],
+        [206, 178, 9, 9, "c", "a"]
+      ]
+    },
+    {
+      "title": "Services",
+      "description": "Background jobs analyse meetings and videos and keep the knowledge base fresh.",
+      "stack": ["Trigger.dev", "Python", "OpenCV", "Redis"],
+      "parts": [
+        [28, 34, 194, 32, "r", ""],
+        [36, 42, 40, 16, "r", "a"],
+        [84, 42, 40, 16, "r", "a"],
+        [132, 42, 40, 16, "r", ""],
+        [28, 92, 90, 128, "", ""],
+        [132, 92, 90, 128, "", ""],
+        [40, 108, 66, 10, "r", "a"],
+        [40, 128, 50, 10, "r", ""],
+        [144, 108, 66, 10, "r", ""],
+        [144, 128, 40, 10, "r", "a"]
+      ]
+    },
+    {
+      "title": "Tools and retrieval",
+      "description": "MCP servers I wrote expose reports, meetings and video to the agent; retrieval finds the right passages.",
+      "stack": ["MCP", "RAG", "Embeddings", "Postgres"],
+      "parts": [
+        [28, 28, 58, 90, "", ""],
+        [96, 28, 58, 90, "", ""],
+        [164, 28, 58, 90, "", ""],
+        [38, 44, 38, 6, "r", "a"],
+        [106, 44, 38, 6, "r", "a"],
+        [174, 44, 38, 6, "r", "a"],
+        [28, 148, 30, 30, "", "a"],
+        [28, 188, 30, 30, "", ""],
+        [68, 148, 30, 30, "", ""],
+        [68, 188, 30, 30, "", ""],
+        [108, 148, 30, 30, "", ""],
+        [108, 188, 30, 30, "", "a"],
+        [148, 148, 30, 30, "", "a"],
+        [148, 188, 30, 30, "", ""],
+        [188, 148, 30, 30, "", ""],
+        [188, 188, 30, 30, "", ""]
+      ]
+    },
+    {
+      "title": "Agent",
+      "description": "A tool-calling model plans the steps, calls the tools it needs and streams the answer back.",
+      "stack": ["OpenAI", "Anthropic", "Tool calling", "Streaming"],
+      "parts": [
+        [48, 122, 154, 6, "r", ""],
+        [122, 48, 6, 154, "r", ""],
+        [92, 92, 66, 66, "c", "a"],
+        [30, 30, 40, 40, "r", ""],
+        [180, 30, 40, 40, "r", ""],
+        [30, 180, 40, 40, "r", ""],
+        [180, 180, 40, 40, "r", ""]
+      ]
+    },
+    {
+      "title": "Interface",
+      "description": "The question is typed into the Mave Agent, a native desktop app I co-built in Rust with Tauri.",
+      "stack": ["Rust", "Tauri", "React"],
+      "parts": [
+        [22, 22, 206, 206, "", ""],
+        [22, 22, 206, 28, "", ""],
+        [40, 66, 110, 24, "r", ""],
+        [100, 102, 110, 24, "r", "a"],
+        [40, 138, 128, 24, "r", ""],
+        [40, 186, 170, 26, "r", ""]
+      ]
+    }
+  ]
+}
