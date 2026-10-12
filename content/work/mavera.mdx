@@ -1,0 +1,44 @@
+export const meta = {
+  title: "Mavera",
+  number: "01",
+  lede: "An AI market-intelligence platform. I built it end to end, led the developers who joined, and co-built its desktop agent.",
+  description: "Mavera case study: an AI market-intelligence platform used by 120+ companies, built end to end, with a desktop agent in Rust and services on Kubernetes.",
+  facts: [
+    ["Role", "Lead software engineer"],
+    ["When", "Oct 2024 to Aug 2026"],
+    ["Where", "Remote, Los Angeles"],
+    ["Stack", "Next.js, Rust, MCP, Kubernetes"],
+  ],
+  published: "2026-10-20",
+};
+
+<Screenshot todo="Mavera dashboard, with the Mave Agent window on top. Blur client data." />
+
+<Section
+  title="The problem"
+  todo="Two or three sentences in your words: what market researchers needed, what was slow or missing before, and what Mavera set out to change."
+/>
+
+<Section title="What I built">
+  <Cards>
+    <Card title="The web platform">Built end to end in Next.js, then led the developers who joined to extend it.</Card>
+    <Card title="The Mave Agent">A desktop agent in Rust with Tauri: tool calling, retrieval and streaming.</Card>
+    <Card title="MCP servers and pipelines">Trigger.dev jobs and Python (OpenCV) services that analyse meetings and videos and simulate focus groups.</Card>
+    <Card title="Infrastructure">Containerised services on Kubernetes on EC2, with RDS, S3, CI/CD, Auth0 and Stripe.</Card>
+  </Cards>
+</Section>
+
+<Section
+  title="Hard calls"
+  todo="Three decisions, each with what you weighed, what you chose and what it cost or saved. For example: why the desktop agent is Rust and Tauri rather than Electron; how long video jobs were queued, retried and kept cheap; what the agent is allowed to do without asking."
+/>
+
+<Stats>
+  <Stat value="120+" label="Companies">Including Coca-Cola, Morningstar, S&P Global, Spotify</Stat>
+  <Stat value="$100K+" label="Monthly revenue">Reached while I led engineering</Stat>
+  <Stat value="2y" label="Lead role">From first commit to a team</Stat>
+</Stats>
+
+<Quote by="Jill Axline, PhD" role="Co-founder and CEO, Mavera">
+  His documentation is exemplary, both in precision and completeness, and it makes the entire build process more efficient.
+</Quote>

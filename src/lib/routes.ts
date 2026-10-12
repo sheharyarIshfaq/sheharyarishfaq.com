@@ -5,4 +5,7 @@ export type Route = {
   priority: number;
 };
 
-export const routes: Route[] = [{ path: "/", source: "content/home.json", priority: 1 }];
+export const routes: Route[] = [
+  { path: "/", source: "content/home.json", priority: 1 },
+  { path: "/work/mavera", source: "content/work/mavera.mdx", priority: 0.8 },
+];
