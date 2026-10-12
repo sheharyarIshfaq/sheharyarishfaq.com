@@ -9,6 +9,7 @@ const Attention = lazy(() => import("./AttentionFigure"));
 const Trace = lazy(() => import("./TraceFigure"));
 const QuoteCheck = lazy(() => import("./QuoteCheckFigure"));
 const ProjectMap = lazy(() => import("./map/MapFigure"));
+const Kernel = lazy(() => import("./KernelFigure"));
 
 export function AttentionFigure() {
   return <Attention />;
@@ -24,4 +25,8 @@ export function QuoteCheckFigure({ data }: { data: QuoteCheckProject["quoteCheck
 
 export function MapFigure() {
   return <ProjectMap />;
+}
+
+export function KernelFigure(props: { label: string; caption: string; button: string }) {
+  return <Kernel {...props} />;
 }
