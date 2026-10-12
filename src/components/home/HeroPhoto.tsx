@@ -1,6 +1,5 @@
 import home from "@content/home.json";
-import Image from "next/image";
-import { site } from "@/lib/site";
+import { Picture } from "@/components/Picture";
 
 const cardPositions = {
   "top-left": "left-3 top-[14%] md:left-0 md:top-[18%]",
@@ -8,8 +7,6 @@ const cardPositions = {
 };
 
 export function HeroPhoto() {
-  const { hero } = site.images;
-
   return (
     <figure className="relative m-0 w-full max-w-[560px] px-2 py-4 sm:px-6 md:py-6 md:pr-7 md:pl-10 lg:max-w-none">
       <span
@@ -17,14 +14,11 @@ export function HeroPhoto() {
         className="absolute top-8 right-0 bottom-1 left-10 rotate-4 rounded-[32px] bg-soft md:top-11 md:right-2 md:bottom-1.5 md:left-[70px] md:rounded-[40px]"
       />
       <div className="relative aspect-[4/4.6] overflow-hidden rounded-[32px] border-[6px] border-card bg-panel shadow-(--shadow-photo) md:rounded-[36px]">
-        <Image
-          src={hero.src}
-          alt={hero.alt}
-          fill
+        <Picture
+          image="hero"
           priority
-          sizes="(min-width: 768px) 560px, 100vw"
-          className="animate-settle object-cover"
-          style={{ objectPosition: hero.objectPosition }}
+          sizes="(min-width: 1024px) 560px, (min-width: 640px) 520px, calc(100vw - 56px)"
+          className="absolute inset-0 size-full animate-settle object-cover"
         />
       </div>
       {home.hero.floatingCards.map((card, index) => (

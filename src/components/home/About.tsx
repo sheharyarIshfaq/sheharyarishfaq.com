@@ -1,5 +1,5 @@
 import home from "@content/home.json";
-import Image from "next/image";
+import { Picture } from "@/components/Picture";
 import { site } from "@/lib/site";
 
 export function About() {
@@ -14,14 +14,7 @@ export function About() {
     >
       <figure className="m-0 flex max-w-[420px] flex-col gap-2.5 md:max-w-none">
         <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-line bg-panel">
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill
-            sizes="(min-width: 768px) 420px, 100vw"
-            className="object-cover"
-            style={{ objectPosition: photo.objectPosition }}
-          />
+          <Picture image="about" sizes="(min-width: 768px) 420px, 100vw" className="absolute inset-0 size-full object-cover" />
         </div>
         <figcaption className="text-[13px] text-ink-2">{photo.caption}</figcaption>
       </figure>

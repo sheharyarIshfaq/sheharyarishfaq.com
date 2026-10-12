@@ -50,6 +50,15 @@ function freelanceCloud(): CloudDot[] {
 
 export const cloud = freelanceCloud();
 
+// One path per year: each dot is a zero-length segment with a round cap, which keeps 165 dots out of the DOM.
+export const cloudByYear = [...new Set(cloud.map((dot) => dot.year))].sort().map((year) => ({
+  year,
+  d: cloud
+    .filter((dot) => dot.year === year)
+    .map((dot) => `M${dot.x.toFixed(2)} ${dot.y.toFixed(2)}h0`)
+    .join(""),
+}));
+
 export function pointById(id: number) {
   return points.find((point) => point.id === id)!;
 }

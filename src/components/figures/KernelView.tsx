@@ -1,4 +1,4 @@
-import { BLOCK_WIDTH, BLOCKS, isLit, ROWS, WORD } from "@/lib/kernel";
+import { BLOCK_WIDTH, BLOCKS, COLUMNS, isLit, ROWS, WORD } from "@/lib/kernel";
 
 type KernelViewProps = {
   label: string;
@@ -11,29 +11,49 @@ type KernelViewProps = {
   onRun?: () => void;
 };
 
+const PITCH = 10;
+const BLOCK_GAP = 8;
+const WIDTH = COLUMNS * PITCH + (BLOCKS - 1) * BLOCK_GAP;
+const HEIGHT = ROWS * PITCH;
+
+// Each dot is a zero-length segment with a round cap, so a whole block's dots fit in one path.
+function dots(block: number, lit: boolean) {
+  let d = "";
+  for (let y = 0; y < ROWS; y++) {
+    for (let column = 0; column < BLOCK_WIDTH; column++) {
+      const x = block * BLOCK_WIDTH + column;
+      if (isLit(x, y) !== lit) continue;
+      d += `M${x * PITCH + block * BLOCK_GAP + PITCH / 2} ${y * PITCH + PITCH / 2}h0`;
+    }
+  }
+  return d;
+}
+
+const blockDots = Array.from({ length: BLOCKS }, (_, block) => ({ unlit: dots(block, false), lit: dots(block, true) }));
+
 export function KernelView({ label, caption, button, finished, pending = finished === null, onRun }: KernelViewProps) {
   return (
     <figure className="m-0 flex flex-col gap-2.5">
       <div className="flex flex-col gap-3 rounded-[22px] border border-line bg-panel p-4 md:p-6">
         <span className="font-num text-base text-ink-2">{label}</span>
-        <div aria-hidden="true" data-kernel={pending ? "pending" : "running"} className="flex gap-[5px] md:gap-2">
-          {Array.from({ length: BLOCKS }, (_, block) => {
+        <svg
+          aria-hidden="true"
+          viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+          data-kernel={pending ? "pending" : "running"}
+          className="kernel h-auto w-full overflow-visible"
+          strokeLinecap="round"
+        >
+          {blockDots.map(({ unlit, lit }, block) => {
             const done = finished !== null && block < finished;
             const running = finished !== null && block === finished;
             return (
-              <div key={block} className="grid flex-1 grid-cols-8 gap-px md:gap-[3px]">
-                {Array.from({ length: ROWS * BLOCK_WIDTH }, (_, index) => {
-                  const x = block * BLOCK_WIDTH + (index % BLOCK_WIDTH);
-                  const y = Math.floor(index / BLOCK_WIDTH);
-                  const lit = isLit(x, y);
-                  const tone =
-                    lit && done ? "bg-blue" : lit && running ? "scale-125 bg-warm" : done || running ? "bg-soft" : "bg-line opacity-55";
-                  return <span key={index} className={`kernel-cell block aspect-square rounded-full transition-[background-color,scale] duration-[250ms] ${tone}`} />;
-                })}
-              </div>
+              <g key={block}>
+                <path d={unlit} className={done || running ? "on" : "off"} />
+                <path d={lit} className={done ? "lit" : running ? "hot" : "off"} />
+              </g>
             );
           })}
-        </div>
+        </svg>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-4">
         <figcaption className="text-sm text-ink-2">

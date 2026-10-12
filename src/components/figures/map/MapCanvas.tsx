@@ -1,5 +1,5 @@
 import type { KeyboardEvent } from "react";
-import { cloud, mapData, pointById, years, type Filter } from "@/lib/map";
+import { cloudByYear, mapData, pointById, years, type Filter } from "@/lib/map";
 import { MapPoints } from "./MapPoints";
 
 type MapCanvasProps = {
@@ -56,22 +56,20 @@ export function MapCanvas({ selected, filter, year, onSelect, onYear, onPointKey
           </span>
         ))}
 
-        {cloud.map((dot, index) => {
-          const shown = visibleYear(dot.year);
-          return (
-            <span
-              key={index}
-              aria-hidden="true"
-              className="absolute size-1.5 rounded-full bg-dot transition-[opacity,scale] duration-500 ease-out"
-              style={{
-                left: `${dot.x}%`,
-                top: `${dot.y}%`,
-                opacity: shown ? (filter === "all" || filter === "p" ? 1 : 0.25) : 0,
-                scale: shown ? 1 : 0,
-              }}
+        <svg aria-hidden="true" className="absolute inset-0 size-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          {cloudByYear.map(({ year: dotYear, d }) => (
+            <path
+              key={dotYear}
+              d={d}
+              stroke="var(--dot)"
+              strokeWidth={6}
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+              className="transition-opacity duration-500"
+              opacity={dotYear > year ? 0 : filter === "all" || filter === "p" ? 1 : 0.25}
             />
-          );
-        })}
+          ))}
+        </svg>
 
         <svg aria-hidden="true" className="absolute inset-0 z-[3] size-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           {current.neighbours.map(([id, similarity]) => {

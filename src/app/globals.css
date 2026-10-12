@@ -117,10 +117,10 @@
   }
 
   /* Without JavaScript the kernel grid shows its finished word; with it, the grid waits to run. */
-  [data-js] [data-kernel="pending"] .kernel-cell {
-    background: var(--line);
+  [data-js] [data-kernel="pending"] path {
+    stroke: var(--line);
+    stroke-width: 7;
     opacity: 0.55;
-    scale: 1;
   }
 }
 
@@ -163,6 +163,29 @@
 @media (min-width: 768px) {
   .map-label[data-flip~="wide"] {
     translate: calc(-100% - var(--gap)) -50%;
+  }
+}
+
+.kernel path {
+  stroke-width: 7;
+  transition: stroke 250ms, stroke-width 250ms, opacity 250ms;
+
+  &.off {
+    stroke: var(--line);
+    opacity: 0.55;
+  }
+
+  &.on {
+    stroke: var(--soft);
+  }
+
+  &.hot {
+    stroke: var(--warm);
+    stroke-width: 8.75;
+  }
+
+  &.lit {
+    stroke: var(--blue);
   }
 }
 

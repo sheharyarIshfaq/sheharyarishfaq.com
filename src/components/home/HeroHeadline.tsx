@@ -85,56 +85,55 @@ export function HeroHeadline({ bios, alternatives, altsLabel, idleHint, regenLab
 
   return (
     <div ref={wrapRef} className="relative flex flex-col gap-[22px]">
-      <div className="grid text-[40px] leading-[1.04] md:text-[60px]">
-        {bios.map((text) => (
-          <span key={text} aria-hidden="true" className="headline invisible col-start-1 row-start-1 leading-[1.04]">
-            {text}
-          </span>
-        ))}
-        <h1
-          data-awaiting-js={awaiting || undefined}
-          onMouseLeave={() => setOpen(null)}
-          className="col-start-1 row-start-1 leading-[1.04]"
-        >
-          {words.slice(0, visible).map((word, index) => {
-            const hasAlts = Boolean(alternatives[altKey(word)]);
-            const isOpen = open?.index === index;
+      <h1
+        data-awaiting-js={awaiting || undefined}
+        onMouseLeave={() => setOpen(null)}
+        className="text-[40px] leading-[1.04] md:text-[60px] lg:min-h-[190px]"
+      >
+        {visible === 0 && <Caret />}
+        {words.map((word, index) => {
+          const hasAlts = Boolean(alternatives[altKey(word)]);
+          const isOpen = open?.index === index;
+          // Every word is laid out from the start and revealed in place, so streaming never moves the page.
+          const hidden = index >= visible;
+          const caret = streaming && index === visible - 1 && <Caret />;
 
-            if (!hasAlts) return <span key={`${bio}-${index}`}>{word} </span>;
-
+          if (!hasAlts) {
             return (
-              <span key={`${bio}-${index}`}>
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  aria-controls={isOpen ? cardId : undefined}
-                  onPointerDown={(event: PointerEvent) => (pointerType.current = event.pointerType)}
-                  onPointerEnter={(event) => event.pointerType === "mouse" && show(index, event.currentTarget)}
-                  onPointerLeave={(event) => event.pointerType === "mouse" && setOpen(null)}
-                  onFocus={(event) => event.currentTarget.matches(":focus-visible") && show(index, event.currentTarget)}
-                  onBlur={() => setOpen(null)}
-                  onClick={(event) => {
-                    if (pointerType.current === "mouse") return;
-                    if (isOpen) setOpen(null);
-                    else show(index, event.currentTarget);
-                  }}
-                  className={`-mx-1.5 cursor-help rounded-[10px] px-1.5 tracking-[inherit] transition-colors duration-200 [font:inherit] focus-visible:outline-offset-0 ${
-                    isOpen ? "bg-blue text-on-blue" : "shadow-[inset_0_-5px_0_var(--soft)]"
-                  }`}
-                >
-                  {word}
-                </button>{" "}
+              <span key={`${bio}-${index}`} className={hidden ? "invisible" : undefined}>
+                {word}
+                {caret}{" "}
               </span>
             );
-          })}
-          {streaming && (
-            <span
-              aria-hidden="true"
-              className="inline-block h-[0.82em] w-[0.42em] animate-blink rounded-[3px] bg-blue align-[-0.06em]"
-            />
-          )}
-        </h1>
-      </div>
+          }
+
+          return (
+            <span key={`${bio}-${index}`} className={hidden ? "invisible" : undefined}>
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                aria-controls={isOpen ? cardId : undefined}
+                onPointerDown={(event: PointerEvent) => (pointerType.current = event.pointerType)}
+                onPointerEnter={(event) => event.pointerType === "mouse" && show(index, event.currentTarget)}
+                onPointerLeave={(event) => event.pointerType === "mouse" && setOpen(null)}
+                onFocus={(event) => event.currentTarget.matches(":focus-visible") && show(index, event.currentTarget)}
+                onBlur={() => setOpen(null)}
+                onClick={(event) => {
+                  if (pointerType.current === "mouse") return;
+                  if (isOpen) setOpen(null);
+                  else show(index, event.currentTarget);
+                }}
+                className={`-mx-1.5 cursor-help rounded-[10px] px-1.5 tracking-[inherit] transition-colors duration-200 [font:inherit] focus-visible:outline-offset-0 ${
+                  isOpen ? "bg-blue text-on-blue" : "shadow-[inset_0_-5px_0_var(--soft)]"
+                }`}
+              >
+                {word}
+              </button>
+              {caret}{" "}
+            </span>
+          );
+        })}
+      </h1>
 
       <p className="flex min-h-10 flex-wrap items-center gap-2 text-sm text-ink-2">
         {idleHint}
@@ -181,5 +180,14 @@ export function HeroHeadline({ bios, alternatives, altsLabel, idleHint, regenLab
         </div>
       )}
     </div>
+  );
+}
+
+// Zero width, so the blinking caret never pushes the words that follow.
+function Caret() {
+  return (
+    <span aria-hidden="true" className="relative inline-block w-0">
+      <span className="absolute bottom-[-0.08em] left-[0.08em] block h-[0.82em] w-[0.42em] animate-blink rounded-[3px] bg-blue" />
+    </span>
   );
 }
