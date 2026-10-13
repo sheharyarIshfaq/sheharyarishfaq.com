@@ -7,5 +7,9 @@ export type Route = {
 
 export const routes: Route[] = [
   { path: "/", source: "content/home.json", priority: 1 },
-  { path: "/work/mavera", source: "content/work/mavera.mdx", priority: 0.8 },
+  ...["mavera", "bina", "aiwrappers", "caracat", "birdclef"].map((slug) => ({
+    path: `/work/${slug}`,
+    source: `content/work/${slug}.mdx`,
+    priority: 0.8,
+  })),
 ];

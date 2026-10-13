@@ -63,9 +63,9 @@ export function QuoteCheckView({ data, checked, onToggle, panelRef, firstQuoteRe
                 <span key={index}>
                   <span
                     ref={quoteIndex === 0 ? firstQuoteRef : undefined}
-                    className={`rounded px-0.5 transition-colors duration-300 ${
+                    className={`rounded transition-colors duration-300 ${
                       state === "found"
-                        ? "bg-[color-mix(in_srgb,var(--green)_22%,transparent)]"
+                        ? "bg-[color-mix(in_srgb,var(--green)_22%,transparent)] px-0.5"
                         : state === "missing"
                           ? "underline decoration-warm decoration-2 underline-offset-4"
                           : ""

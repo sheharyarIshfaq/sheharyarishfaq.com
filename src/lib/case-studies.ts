@@ -17,6 +17,10 @@ const caseStudy = (module: Promise<unknown>) => module as Promise<CaseStudyModul
 // In reading order; the "Next" link at the end of each case study follows it.
 const modules: Record<string, () => Promise<CaseStudyModule>> = {
   mavera: () => caseStudy(import("@content/work/mavera.mdx")),
+  bina: () => caseStudy(import("@content/work/bina.mdx")),
+  aiwrappers: () => caseStudy(import("@content/work/aiwrappers.mdx")),
+  caracat: () => caseStudy(import("@content/work/caracat.mdx")),
+  birdclef: () => caseStudy(import("@content/work/birdclef.mdx")),
 };
 
 export const caseStudySlugs = Object.keys(modules);
