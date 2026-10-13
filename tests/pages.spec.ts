@@ -4,7 +4,7 @@ import { routes } from "../src/lib/routes";
 
 const widths = [375, 768, 1440];
 const themes = ["light", "dark"] as const;
-const paths = routes.map((route) => route.path);
+const paths = [...routes.map((route) => route.path), "/missing-page"];
 
 function fileName(path: string) {
   return path === "/" ? "home" : path.slice(1).replace(/\//g, "-");

@@ -59,6 +59,10 @@ export const cloudByYear = [...new Set(cloud.map((dot) => dot.year))].sort().map
     .join(""),
 }));
 
+export function pointByName(name: string) {
+  return points.find((point) => point.name === name)!;
+}
+
 export function pointById(id: number) {
   return points.find((point) => point.id === id)!;
 }

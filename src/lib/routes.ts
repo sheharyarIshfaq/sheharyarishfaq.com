@@ -12,4 +12,8 @@ export const routes: Route[] = [
     source: `content/work/${slug}.mdx`,
     priority: 0.8,
   })),
+  { path: "/research", source: "content/pages.json", priority: 0.6 },
+  { path: "/hire", source: "content/pages.json", priority: 0.6 },
+  { path: "/now", source: "content/home.json", priority: 0.5 },
+  { path: "/colophon", source: "content/pages.json", priority: 0.3 },
 ];

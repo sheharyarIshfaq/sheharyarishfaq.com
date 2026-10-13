@@ -1,0 +1,37 @@
+{
+  "research": {
+    "title": "Research",
+    "description": "Research and coursework of Sheharyar Ishfaq, MSc Computer Science at Sorbonne: GPU programming, parallel computing and a Rust traceroute engine at LIP6.",
+    "cvLabel": "Download the academic CV"
+  },
+  "hire": {
+    "title": "Hire",
+    "description": "Sheharyar Ishfaq, AI engineer in Paris, is open to a six-month internship from 15 February 2027. Sorbonne signs the convention de stage, so no visa paperwork."
+  },
+  "now": {
+    "description": "What Sheharyar Ishfaq is doing now: final year of an MSc at Sorbonne, with GPU programming in CUDA, parallel computing with MPI and deep learning for vision."
+  },
+  "colophon": {
+    "title": "Colophon",
+    "description": "How this site is built: Next.js, TypeScript and Tailwind CSS exported as static pages, Archivo and Doto type, and figures drawn with CSS and SVG in the browser.",
+    "sections": [
+      {
+        "title": "Stack",
+        "text": "Next.js with TypeScript and Tailwind CSS, exported as static HTML and served from Cloudflare. Case studies are written in MDX."
+      },
+      {
+        "title": "Type",
+        "text": "Archivo for text, with its width axis stretched for headlines. Doto for numbers."
+      },
+      {
+        "title": "Figures",
+        "text": "The figures are drawn with CSS and SVG and run in the browser. The attention weights, the map's positions and similarity scores, and the trace's bar widths are set by hand to tell the story; they are not output from a real model or measured timings. The quote check runs a real matching function on example text. With reduced motion on, every figure shows its final state."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Nothing here.",
+    "text": "This page doesn't exist, or it moved.",
+    "link": "Go to the homepage"
+  }
+}
