@@ -105,6 +105,9 @@
   },
   "footer": {
     "left": "Sheharyar Ishfaq, Paris",
-    "right": { "text": "Also runs", "link": "Aivex Labs", "href": "https://aivex.co" }
+    "work": "Work",
+    "more": "More",
+    "elsewhere": "Elsewhere",
+    "backToTop": "Back to top"
   }
 }

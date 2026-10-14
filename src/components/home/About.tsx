@@ -16,7 +16,11 @@ export function About() {
         <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-line bg-panel">
           <Picture image="about" sizes="(min-width: 768px) 420px, 100vw" className="absolute inset-0 size-full object-cover" />
         </div>
-        <figcaption className="text-[13px] text-ink-2">{photo.caption}</figcaption>
+        <figcaption className="text-[13px] text-ink-2">
+          <a href={photo.captionHref} target="_blank" rel="noopener" className="text-link">
+            {photo.caption}
+          </a>
+        </figcaption>
       </figure>
       <div className="flex flex-col gap-5">
         <h2 id="about-title" className="text-[32px] leading-[1.02] md:text-[46px]">
