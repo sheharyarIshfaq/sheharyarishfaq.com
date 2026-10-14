@@ -1,17 +1,11 @@
 import home from "@content/home.json";
 import pages from "@content/pages.json";
-import work from "@content/work.json";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoMark } from "@/components/Logo";
 import { isAvailable } from "@/lib/files";
 import { site } from "@/lib/site";
-import { Wordmark } from "./Wordmark";
-
-const caseStudies = [
-  ...work.projects.map((project) => ({ href: `/work/${project.slug}`, label: project.name, number: project.number })),
-  ...work.caseStudyNotFeatured.map((study) => ({ href: `/work/${study.slug}`, label: study.name, number: undefined })),
-];
+import { YearIndex } from "./YearIndex";
 
 const morePages = [
   { href: "/now", label: home.now.title },
@@ -44,7 +38,7 @@ export function SiteFooter() {
 
   return (
     <footer className="container-page">
-      <div className="grid gap-10 border-t border-line pt-12 pb-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.5fr)_repeat(3,minmax(0,1fr))]">
+      <div className="grid gap-10 border-t border-line pt-12 pb-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
         <div className="flex flex-col items-start gap-4">
           <Link href="/" className="flex items-center gap-3 text-ink">
             <LogoMark className="h-[27px] w-[30px]" />
@@ -63,17 +57,6 @@ export function SiteFooter() {
             </p>
           )}
         </div>
-
-        <Column title={footer.work}>
-          {caseStudies.map((study) => (
-            <li key={study.href}>
-              <Link href={study.href} className={`flex items-baseline gap-2.5 ${linkClass}`}>
-                <span className="font-num w-5 text-[13px] text-blue-text">{study.number}</span>
-                {study.label}
-              </Link>
-            </li>
-          ))}
-        </Column>
 
         <Column title={footer.more}>
           {morePages.map((page) => (
@@ -96,7 +79,7 @@ export function SiteFooter() {
         </Column>
       </div>
 
-      <Wordmark />
+      <YearIndex />
 
       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 pb-10 mt-6 text-sm text-ink-2">
         <span>{footer.left}</span>

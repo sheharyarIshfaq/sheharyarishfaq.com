@@ -189,15 +189,6 @@
   }
 }
 
-/* Hovering the footer wordmark lights the dots around the name, as if the kernel ran. */
-.wordmark path {
-  transition: stroke 400ms var(--ease);
-}
-
-.wordmark:hover path:first-child {
-  stroke: var(--soft);
-}
-
 /* Looping decorations run only while their figure is on screen. */
 [data-loop] {
   animation-play-state: paused;
