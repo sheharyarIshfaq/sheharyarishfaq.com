@@ -1,8 +1,8 @@
 import home from "@content/home.json";
 import { isAvailable } from "@/lib/files";
-import { svgWidthAt } from "@/lib/svg";
+import { balancedLogoSize } from "@/lib/svg";
 
-const LOGO_HEIGHT = 26;
+const LOGO_AREA = 3000;
 
 export function LogoStrip() {
   const { lead, items } = home.logos;
@@ -20,8 +20,7 @@ export function LogoStrip() {
                 aria-label={logo.name}
                 className="block bg-ink-2"
                 style={{
-                  width: svgWidthAt(logo.file, LOGO_HEIGHT),
-                  height: LOGO_HEIGHT,
+                  ...balancedLogoSize(logo.file, LOGO_AREA, 24, 30),
                   mask: `url(${logo.file}) center / contain no-repeat`,
                 }}
               />

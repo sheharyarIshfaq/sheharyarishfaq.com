@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 
 type MobileMenuProps = {
   links: { label: string; href: string }[];
@@ -54,9 +53,6 @@ export function MobileMenu({ links }: MobileMenuProps) {
             </li>
           ))}
         </ul>
-        <div className="border-t border-line pt-4">
-          <ThemeToggle />
-        </div>
       </nav>
     </div>
   );

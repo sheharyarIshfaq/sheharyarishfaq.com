@@ -1,10 +1,15 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-// Width of an SVG in public/ when drawn at the given height, from its viewBox.
-export function svgWidthAt(file: string, height: number) {
+function aspectOf(file: string) {
   const svg = readFileSync(join(process.cwd(), "public", file), "utf8");
   const viewBox = svg.match(/viewBox="[\d.\s-]*?([\d.]+)\s+([\d.]+)"/);
-  if (!viewBox) return height * 4;
-  return Math.round((Number(viewBox[1]) / Number(viewBox[2])) * height);
+  return viewBox ? Number(viewBox[1]) / Number(viewBox[2]) : 4;
+}
+
+// Sizes logos to the same visual area, so a tall mark and a long wordmark look equally heavy.
+export function balancedLogoSize(file: string, area: number, minHeight: number, maxHeight: number) {
+  const aspect = aspectOf(file);
+  const height = Math.min(maxHeight, Math.max(minHeight, Math.sqrt(area / aspect)));
+  return { width: Math.round(height * aspect), height: Math.round(height) };
 }

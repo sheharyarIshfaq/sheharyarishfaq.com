@@ -29,10 +29,10 @@ export function SiteHeader() {
               ))}
             </ul>
           </nav>
-          <div className="hidden md:block">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
+            <MobileMenu links={links} />
           </div>
-          <MobileMenu links={links} />
         </div>
       </div>
     </StickyHeader>
