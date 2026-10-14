@@ -1,4 +1,4 @@
-// Crops each photo to its frame and writes AVIF, WebP and JPEG sizes to public/images/generated.
+// Crops each photo to its frame and writes AVIF, WebP and JPEG sizes to public/images/sized.
 // The static export can't use the Next image optimiser, so this runs before every build.
 import { mkdir, readFile, stat } from "node:fs/promises";
 import { basename, extname, join } from "node:path";
@@ -7,7 +7,7 @@ import sharp from "sharp";
 const root = new URL("..", import.meta.url).pathname;
 const site = JSON.parse(await readFile(join(root, "content/site.json"), "utf8"));
 const variants = JSON.parse(await readFile(join(root, "src/lib/image-variants.json"), "utf8"));
-const outDir = join(root, "public/images/generated");
+const outDir = join(root, "public/images/sized");
 await mkdir(outDir, { recursive: true });
 
 async function isFresh(output, source) {

@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 
 const { title, text, link } = pages.notFound;
 
-export const metadata = { title, robots: { index: false } };
+export const metadata = { title, alternates: { canonical: null } };
 
 export default function NotFound() {
   return (
