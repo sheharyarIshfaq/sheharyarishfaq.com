@@ -41,6 +41,20 @@
   --animate-settle: settle 1400ms var(--ease) both;
   --animate-rise-in: rise-in 600ms var(--ease) both;
   --animate-blink: blink 1s steps(1) infinite;
+  --animate-beat: beat 900ms var(--ease) infinite;
+
+  @keyframes beat {
+    0%,
+    100% {
+      scale: 1;
+    }
+    30% {
+      scale: 1.25;
+    }
+    60% {
+      scale: 0.95;
+    }
+  }
 
   @keyframes settle {
     from {

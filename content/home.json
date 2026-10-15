@@ -104,7 +104,8 @@
     "copiedLabel": "Email copied"
   },
   "footer": {
-    "left": "Sheharyar Ishfaq, Paris",
+    "madeWith": "Made with",
+    "madeIn": "in Paris",
     "more": "More",
     "elsewhere": "Elsewhere",
     "backToTop": "Back to top"

@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 import { LogoMark } from "@/components/Logo";
 import { isAvailable } from "@/lib/files";
 import { site } from "@/lib/site";
-import { YearIndex } from "./YearIndex";
 
 const morePages = [
   { href: "/now", label: home.now.title },
@@ -79,10 +78,19 @@ export function SiteFooter() {
         </Column>
       </div>
 
-      <YearIndex />
 
-      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 pb-10 mt-6 text-sm text-ink-2">
-        <span>{footer.left}</span>
+      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 pb-10 text-sm text-ink-2">
+        <p className="group flex items-center gap-1.5">
+          {footer.madeWith}
+          <svg aria-label="love" role="img" viewBox="0 0 24 24" className="size-4 fill-blue group-hover:animate-beat">
+            <path d="M12 20.5s-7.5-4.6-9.4-9.3C1.3 8 3.3 4.5 6.8 4.5c2.1 0 3.6 1.2 4.4 2.6.8-1.4 2.3-2.6 4.4-2.6 3.5 0 5.5 3.5 4.2 6.7-1.9 4.7-9.8 9.3-9.8 9.3Z" />
+          </svg>
+          {footer.madeIn}
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="size-4 text-blue-text">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" />
+          </svg>
+        </p>
         <a href="#" className="transition-colors duration-300 hover:text-ink">
           {footer.backToTop}
         </a>
