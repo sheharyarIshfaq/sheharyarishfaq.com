@@ -105,7 +105,10 @@
   },
   "footer": {
     "madeWith": "Made with",
+    "madeWithEmoji": [["❤️", "love"], ["☕", "coffee"], ["🦀", "Rust"], ["🤖", "agents"], ["⚡", "CUDA"]],
     "madeIn": "in Paris",
+    "madeInEmoji": "🥐",
+    "nextEmoji": "Show what else it was made with",
     "more": "More",
     "elsewhere": "Elsewhere",
     "backToTop": "Back to top"
