@@ -28,7 +28,10 @@
     "lead": "Software I led is used by teams at",
     "items": [
       { "name": "Coca-Cola", "file": "/logos/coca-cola.svg" },
+      { "name": "Coinbase", "file": "/logos/coinbase.svg" },
+      { "name": "Instructure", "file": "/logos/instructure.svg" },
       { "name": "Morningstar", "file": "/logos/morningstar.svg" },
+      { "name": "PitchBook", "file": "/logos/pitchbook.svg" },
       { "name": "S&P Global", "file": "/logos/sp-global.svg" },
       { "name": "Spotify", "file": "/logos/spotify.svg" }
     ],
