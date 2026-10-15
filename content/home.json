@@ -29,10 +29,10 @@
     "items": [
       { "name": "Coca-Cola", "file": "/logos/coca-cola.svg" },
       { "name": "Coinbase", "file": "/logos/coinbase.svg" },
-      { "name": "Instructure", "file": "/logos/instructure.svg" },
+      { "name": "Instructure", "file": "/logos/instructure.svg", "fileDark": "/logos/instructure-dark.svg" },
       { "name": "Morningstar", "file": "/logos/morningstar.svg" },
-      { "name": "PitchBook", "file": "/logos/pitchbook.svg" },
-      { "name": "S&P Global", "file": "/logos/sp-global.svg" },
+      { "name": "PitchBook", "file": "/logos/pitchbook.svg", "fileDark": "/logos/pitchbook-dark.svg" },
+      { "name": "S&P Global", "file": "/logos/sp-global.svg", "fileDark": "/logos/sp-global-dark.svg" },
       { "name": "Spotify", "file": "/logos/spotify.svg" }
     ],
     "note": "Use each company's official logo file from its brand or press page, render all four in one grey (Ink 2), never redraw them. Until the files are in /public/logos, show the names as text in the same grey."

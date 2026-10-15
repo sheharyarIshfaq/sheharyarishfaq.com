@@ -47,7 +47,6 @@ export async function ogImage({ title, number }: OgImageProps) {
             <span style={{ maxWidth: 470 }}>{title}</span>
           </div>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element -- next/og only renders plain img elements */}
         <img src={`data:image/jpeg;base64,${photo.toString("base64")}`} width={522} height={630} alt="" />
       </div>
     ),
