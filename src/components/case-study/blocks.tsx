@@ -116,13 +116,14 @@ export function Bars({ rows, min = 0, max = 1, caption }: { rows: Bar[]; min?: n
   );
 }
 
-type ReportFigureProps = { src: string; widths: number[]; width: number; height: number; alt: string; caption: string };
+type ReportFigureProps = { src: string; widths: number[]; width: number; height: number; alt: string; caption: string; lead?: boolean };
 
 // A figure from a report or a screenshot, served as WebP sizes written next to it in public/.
-export function ReportFigure({ src, widths, width, height, alt, caption }: ReportFigureProps) {
+// `lead` is for a figure placed before the first section, which needs the gap a section would have.
+export function ReportFigure({ src, widths, width, height, alt, caption, lead = false }: ReportFigureProps) {
   const srcSet = widths.map((size) => `${src}-${size}.webp ${size}w`).join(", ");
   return (
-    <figure className="m-0 flex flex-col gap-2.5">
+    <figure className={`m-0 flex flex-col gap-2.5 ${lead ? "mb-16 md:mb-24" : ""}`}>
       <img
         src={`${src}-${widths[widths.length - 1]}.webp`}
         srcSet={srcSet}
