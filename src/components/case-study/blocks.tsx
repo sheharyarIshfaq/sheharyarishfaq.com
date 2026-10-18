@@ -34,7 +34,7 @@ export function Card({ title, children }: { title: string; children: ReactNode }
   return (
     <div className="flex flex-col gap-2 rounded-[22px] border border-line bg-card p-6">
       <b className="text-lg font-bold">{title}</b>
-      <p className="text-[15px] leading-[1.55] text-ink-2">{children}</p>
+      <div className="text-[15px] leading-[1.55] text-ink-2">{children}</div>
     </div>
   );
 }
@@ -45,7 +45,7 @@ export function HardCall({ number, title, children }: { number: string; title: s
       <span className="font-num text-2xl text-blue-text">{number}</span>
       <div className="flex flex-col gap-1.5">
         <b className="text-lg font-bold">{title}</b>
-        <p className="text-base leading-[1.6] text-ink-2">{children}</p>
+        <div className="flex flex-col gap-2 text-base leading-[1.6] text-ink-2">{children}</div>
       </div>
     </div>
   );
@@ -85,5 +85,56 @@ export function Screenshot({ todo }: { todo: string }) {
     <div className="mb-16 flex aspect-[16/8] items-end rounded-[32px] border border-line bg-panel p-6 md:mb-24">
       <Todo>Screenshot: {todo}</Todo>
     </div>
+  );
+}
+
+type Bar = { label: string; value: number; display?: string; note?: string; highlight?: boolean };
+
+// A horizontal bar per row, scaled between min and max so small differences stay visible.
+export function Bars({ rows, min = 0, max = 1, caption }: { rows: Bar[]; min?: number; max?: number; caption: string }) {
+  return (
+    <figure className="m-0 flex flex-col gap-2.5">
+      <div className="flex flex-col gap-1 rounded-[22px] border border-line bg-panel p-4 md:p-6">
+        {rows.map((row) => (
+          <div key={`${row.label} ${row.note ?? ""}`} className="grid grid-cols-[minmax(0,1fr)_56px] items-center gap-x-4 gap-y-1 py-1.5 md:grid-cols-[200px_minmax(0,1fr)_56px]">
+            <span className={`text-[15px] ${row.highlight ? "font-bold text-blue-text" : ""}`}>
+              {row.label}
+              {row.note && <span className="block text-[13px] font-normal text-ink-2">{row.note}</span>}
+            </span>
+            <span className="order-last col-span-2 h-2 overflow-hidden rounded-full bg-line md:order-none md:col-span-1">
+              <span
+                className={`block h-full rounded-full ${row.highlight ? "bg-blue" : "bg-soft"}`}
+                style={{ width: `${Math.max(2, ((row.value - min) / (max - min)) * 100)}%` }}
+              />
+            </span>
+            <span className="font-num text-right text-base text-blue-text">{row.display ?? row.value}</span>
+          </div>
+        ))}
+      </div>
+      <figcaption className="text-sm leading-normal text-ink-2">{caption}</figcaption>
+    </figure>
+  );
+}
+
+type ReportFigureProps = { src: string; widths: number[]; width: number; height: number; alt: string; caption: string };
+
+// A figure from a report or a screenshot, served as WebP sizes written next to it in public/.
+export function ReportFigure({ src, widths, width, height, alt, caption }: ReportFigureProps) {
+  const srcSet = widths.map((size) => `${src}-${size}.webp ${size}w`).join(", ");
+  return (
+    <figure className="m-0 flex flex-col gap-2.5">
+      <img
+        src={`${src}-${widths[widths.length - 1]}.webp`}
+        srcSet={srcSet}
+        sizes="(min-width: 1024px) 690px, 100vw"
+        width={width}
+        height={height}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        className="h-auto w-full rounded-[22px] border border-line bg-white"
+      />
+      <figcaption className="text-sm leading-normal text-ink-2">{caption}</figcaption>
+    </figure>
   );
 }
