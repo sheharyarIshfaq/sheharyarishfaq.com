@@ -18,9 +18,16 @@ I build AI agents and the systems they run on.
 - Caracat at LIP6 (research project, 2026): a Rust traceroute engine validated against its C++ predecessor. Graded 86/100, third of twelve.
 - BirdCLEF+ 2026 (machine learning): classical ML on 35.5K recordings of 206 bird species, 0.922 macro ROC-AUC.
 
+## Writing
+
+- Uploading 20 to 30 GB files to S3, straight from the browser: https://medium.com/@sheharyarishfaq/handling-large-file-uploads-20gb-in-node-js-with-s3-multipart-upload-using-signed-urls-b5e41c1cd930
+- How to deploy a Next.js app on AWS EC2 with Nginx and HTTPS: https://medium.com/@sheharyarishfaq/how-to-deploy-a-next-js-app-on-aws-ec2-with-nginx-and-https-step-by-step-guide-7024f5426c03
+- Subdomain-based routing in Next.js for multi-tenant apps: https://medium.com/@sheharyarishfaq/subdomain-based-routing-in-next-js-a-complete-guide-for-multi-tenant-applications-1576244e799a
+
 ## Links
 
 - LinkedIn: https://www.linkedin.com/in/sheharyar-ishfaq/
 - GitHub: https://github.com/sheharyarIshfaq
+- Medium: https://medium.com/@sheharyarishfaq
 - Fiverr: https://www.fiverr.com/sheharyar__
 - Aivex Labs: https://aivex.co

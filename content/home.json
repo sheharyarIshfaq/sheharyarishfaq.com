@@ -83,10 +83,11 @@
     "title": "Writing",
     "sub": "Things I built, then explained.",
     "items": [
-      { "title": "Uploading 20 to 30 GB files to S3, straight from the browser", "summary": "Signed URLs, 10 MB chunks and S3 multipart uploads, with React, Node.js and MongoDB. Full code on GitHub.", "metric": "85K", "metricLabel": "views on LinkedIn", "href": "TODO: Medium article URL", "repo": "https://github.com/sheharyarIshfaq/s3-large-file-uploader", "featured": true },
-      { "title": "TODO: Medium article title", "date": "TODO", "href": "TODO" },
-      { "title": "TODO: Medium article title", "date": "TODO", "href": "TODO" }
-    ]
+      { "title": "Uploading 20 to 30 GB files to S3, straight from the browser", "summary": "Signed URLs, 10 MB chunks and S3 multipart uploads, with React, Node.js and MongoDB. Full code on GitHub.", "metric": "85K", "metricLabel": "views on LinkedIn", "href": "https://medium.com/@sheharyarishfaq/handling-large-file-uploads-20gb-in-node-js-with-s3-multipart-upload-using-signed-urls-b5e41c1cd930", "repo": "https://github.com/sheharyarIshfaq/s3-large-file-uploader", "date": "March 2025", "readTime": "5 min read", "cover": "chunks", "featured": true },
+      { "title": "How to deploy a Next.js app on AWS EC2 with Nginx and HTTPS", "summary": "Run a Next.js app on your own EC2 instance with PM2, serve it through Nginx and secure it with Certbot and Let's Encrypt.", "href": "https://medium.com/@sheharyarishfaq/how-to-deploy-a-next-js-app-on-aws-ec2-with-nginx-and-https-step-by-step-guide-7024f5426c03", "date": "July 2025", "readTime": "3 min read", "cover": "stack" },
+      { "title": "Subdomain-based routing in Next.js for multi-tenant apps", "summary": "Serve each tenant at tenant.example.com with Next.js middleware, a dynamic App Router route and Vercel wildcard domains.", "href": "https://medium.com/@sheharyarishfaq/subdomain-based-routing-in-next-js-a-complete-guide-for-multi-tenant-applications-1576244e799a", "date": "March 2025", "readTime": "2 min read", "cover": "tenants" }
+    ],
+    "more": { "label": "All stories on Medium", "href": "https://medium.com/@sheharyarishfaq" }
   },
   "about": {
     "title": "I like knowing what happens under the button.",
