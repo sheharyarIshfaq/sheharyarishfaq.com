@@ -1,20 +1,71 @@
 export const meta = {
   title: "Caracat at LIP6",
-  lede: "A Rust traceroute engine validated against its C++ predecessor, supervised by Timur Friedman.",
-  description: "Caracat research project at LIP6: an open-source Rust traceroute engine validated against its C++ predecessor across ICMP, UDP, IPv4 and IPv6.",
+  lede: "Is Caracat, the Rust rewrite of the C++ prober Caracal, a faithful port? And why does Measurement Lab call it not production ready? A research project at the LIP6 lab, supervised by Timur Friedman.",
+  description: "Caracat research project at LIP6: comparing Dioptra's Rust traceroute engine with its C++ predecessor Caracal across ICMP, UDP, IPv4 and IPv6.",
   facts: [
-    ["Type", "Research project"],
-    ["When", "2026"],
+    ["Type", "Research, team of four"],
+    ["When", "Spring 2026, Sorbonne M1"],
     ["Result", "86 out of 100, 3rd of 12"],
     ["Stack", "Rust, C++, Networking"],
   ],
-  published: "2026-10-20",
+  published: "2026-10-21",
 };
 
-<Section title="What I did">
-  Analysed Caracat, an open-source Rust traceroute-probing engine, against its C++ predecessor and validated identical behaviour across ICMP, UDP, IPv4 and IPv6. Supervised by Timur Friedman (Dioptra). Graded 86/100, third of twelve.
+<Section title="The question">
+  Caracal is the C++ probing engine that the Dioptra team at LIP6 wrote for Internet topology measurement, and Measurement Lab runs it in production. Caracat is its port to Rust. Our team of four studied two of Dioptra's Rust tools; I worked on Caracat with one teammate, and owned the comparative analysis, the architecture diagrams, the functional tests and the technical deep-dive.
 
-  [See the code](https://github.com/dioptra-io/caracat)
+  The question was simple to ask and slow to answer: is Caracat actually a faithful rewrite of Caracal, and what does "not production ready" really mean?
 </Section>
 
-<Section title="The report" todo="The report PDF, if it can be public." />
+<Section title="What I did">
+  <Cards>
+    <Card title="Module-by-module comparison">Mapped both codebases file by file, about 2,860 lines of C++ against 2,016 of Rust: sender, receiver, parser, packet builder, checksum, timestamps and rate limiter.</Card>
+    <Card title="Functional tests">Five experiments over ICMP, UDP, IPv4 and IPv6 at 100 packets per second, TTL 1 to 15, comparing each tool's hops, reply types and round-trip times.</Card>
+    <Card title="Architecture diagrams">Six diagrams: the layer overview, the send and receive paths, module dependencies, the side-by-side comparison and the key mechanisms.</Card>
+    <Card title="Review with the maintainers">Presented the findings to the developers who run Caracal in production at Measurement Lab, and checked our reading of the code against theirs.</Card>
+  </Cards>
+</Section>
+
+<Section title="What we found">
+  The probing engine is the same in both. What Caracat lacks is everything around it: it ships as a library, with no orchestration, prefix filtering, statistics or command-line tool. Across the five experiments the two tools' outputs matched, hop for hop and reply type for reply type; the only differences were cosmetic, or load balancers sending probes down different paths.
+
+  <Compare
+    left="Caracal, C++"
+    right="Caracat, Rust"
+    caption="Redrawn from the report's comparison diagram. Closing the gap to a production tool is roughly 400 to 500 lines."
+    rows={[
+      { left: "CLI binary", right: "Library", state: "different" },
+      { left: "Orchestration", right: "Not implemented", state: "left-only" },
+      { left: "Sender", right: "Sender", state: "same" },
+      { left: "Sniffer", right: "Receiver", state: "same" },
+      { left: "Parser", right: "Parser", state: "same" },
+      { left: "Packet builder", right: "Packet builder", state: "same" },
+      { left: "Checksum and timestamp", right: "Checksum and timestamp", state: "same" },
+      { left: "Prefix filtering", right: "Missing", state: "left-only" },
+      { left: "Statistics", right: "Missing", state: "left-only" },
+      { left: "Build: CMake", right: "Build: Cargo", state: "different" },
+    ]}
+  />
+</Section>
+
+<Section title="Hard calls">
+  <div>
+    <HardCall number="01" title="Reading “not production ready” as a design choice">
+      Caracat isn't missing pieces by accident: it was built as a library for other tools to embed, not as a finished command-line prober. So whether it is production ready depends on who is asking, and the report sizes the gap rather than treating it as a flaw.
+    </HardCall>
+    <HardCall number="02" title="Treating different hops as load balancing, not bugs">
+      When we changed the port between runs, hops 3 and 4 sometimes came back with different addresses on both tools. That is exactly what per-flow load balancing predicts, so we checked it against the theory before calling it a discrepancy.
+    </HardCall>
+    <HardCall number="03" title="Flagging IPv6 validation as a real risk">
+      IPv6 has no identification field to carry Caracat's checksum, so ICMPv6 replies are accepted on trust. On large campaigns on shared machines that can match the wrong replies, and we raised it as a finding rather than a footnote.
+    </HardCall>
+  </div>
+</Section>
+
+<Section title="Other limitations">
+  No TCP or DCCP probes yet; the packet capture library is called directly rather than behind an interface, so it can't be mocked in tests; send times are taken in user space, a few microseconds before the packet leaves; and the documentation has no architecture overview, which our diagrams set out to fill.
+
+  [See Caracat on GitHub](https://github.com/dioptra-io/caracat)
+</Section>
+
+<Section title="The report" todo="Decide whether the Caracat report PDF can be public. The annex includes your local IP addresses and VPN hops, so only the main report should be linked." />

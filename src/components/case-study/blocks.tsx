@@ -138,3 +138,39 @@ export function ReportFigure({ src, widths, width, height, alt, caption }: Repor
     </figure>
   );
 }
+
+type CompareRow = { left: string; right: string; state: "same" | "left-only" | "different" };
+
+// Two implementations side by side, row by row: what matches, what only one side has.
+export function Compare({ left, right, rows, caption }: { left: string; right: string; rows: CompareRow[]; caption: string }) {
+  const cell = "rounded-[12px] border px-3 py-2 text-center text-sm font-semibold";
+  return (
+    <figure className="m-0 flex flex-col gap-2.5">
+      <div className="grid grid-cols-[minmax(0,1fr)_28px_minmax(0,1fr)] items-center gap-x-2 gap-y-2 rounded-[22px] border border-line bg-panel p-4 md:p-6">
+        <span className="pb-1 text-center text-[15px] font-bold">{left}</span>
+        <span />
+        <span className="pb-1 text-center text-[15px] font-bold">{right}</span>
+        {rows.map((row) => (
+          <div key={row.left} className="contents">
+            <span className={`${cell} ${row.state === "same" ? "border-blue bg-tint text-blue-text" : "border-line bg-card text-ink"}`}>{row.left}</span>
+            <span aria-hidden="true" className="font-num text-center text-blue-text">
+              {row.state === "same" ? "=" : ""}
+            </span>
+            <span
+              className={`${cell} ${
+                row.state === "same"
+                  ? "border-blue bg-tint text-blue-text"
+                  : row.state === "left-only"
+                    ? "border-dashed border-plate-line bg-transparent text-ink-2"
+                    : "border-line bg-card text-ink"
+              }`}
+            >
+              {row.right}
+            </span>
+          </div>
+        ))}
+      </div>
+      <figcaption className="text-sm leading-normal text-ink-2">{caption}</figcaption>
+    </figure>
+  );
+}
