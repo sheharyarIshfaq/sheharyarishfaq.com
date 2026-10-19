@@ -46,7 +46,7 @@
     },
     {
       "title": "Tools and retrieval",
-      "description": "MCP servers I wrote expose reports, meetings and video to the agent; retrieval finds the right passages.",
+      "description": "MCP servers expose reports, meetings and video to the agent; retrieval finds the right passages.",
       "stack": ["MCP", "RAG", "Embeddings", "Postgres"],
       "parts": [
         [28, 28, 58, 90, "", ""],
@@ -83,7 +83,7 @@
     },
     {
       "title": "Interface",
-      "description": "The question is typed into the Mave Agent, a native desktop app I co-built in Rust with Tauri.",
+      "description": "The question is typed into the desktop agent, a native Tauri app I turned into a product, or into the web and iOS apps.",
       "stack": ["Rust", "Tauri", "React"],
       "parts": [
         [22, 22, 206, 206, "", ""],

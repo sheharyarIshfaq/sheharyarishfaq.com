@@ -1,8 +1,8 @@
 export const meta = {
   title: "Mavera",
   number: "01",
-  lede: "An AI market-intelligence platform. I built it end to end, led the developers who joined, and co-built its desktop agent.",
-  description: "Mavera case study: an AI market-intelligence platform used by 120+ companies, built end to end, with a desktop agent in Rust and services on Kubernetes.",
+  lede: "An AI market-intelligence platform. I built it end to end, led the developers who joined, and turned its desktop agent into a product.",
+  description: "Mavera case study: an AI market-intelligence platform used by 120+ companies, built end to end, with a research agent, video pipelines and Kubernetes on AWS.",
   facts: [
     ["Role", "Lead software engineer"],
     ["When", "Oct 2024 to Aug 2026"],
@@ -12,7 +12,26 @@ export const meta = {
   published: "2026-10-20",
 };
 
-<Screenshot todo="Mavera dashboard, with the Mave Agent window on top. Blur client data." />
+<div className="mb-16 grid gap-4 sm:grid-cols-2 md:mb-24">
+  <ReportFigure
+    src="/work/mavera/chat"
+    widths={[600, 1100]}
+    width={2064}
+    height={1900}
+    sizes="(min-width: 640px) 50vw, 100vw"
+    alt="Mave answering a question about whether to start a SaaS business in 2026, with Answer, Evidence, Timeline and Flagged tabs above the answer."
+    caption="Mave, the research agent, on iPad. Every answer comes with its evidence and a timeline."
+  />
+  <ReportFigure
+    src="/work/mavera/timeline"
+    widths={[600, 1100]}
+    width={2064}
+    height={1900}
+    sizes="(min-width: 640px) 50vw, 100vw"
+    alt="The Timeline tab showing the triage, planning, research and execution phases of one answer, each with its duration in milliseconds."
+    caption="The Timeline tab: the same answer, traced phase by phase with real timings."
+  />
+</div>
 
 <Section
   title="The problem"
@@ -21,19 +40,30 @@ export const meta = {
 
 <Section title="What I built">
   <Cards>
-    <Card title="The web platform">Built end to end in Next.js, then led the developers who joined to extend it.</Card>
-    <Card title="The Mave Agent">A desktop agent in Rust with Tauri: tool calling, retrieval and streaming.</Card>
-    <Card title="MCP servers and pipelines">Trigger.dev jobs and Python (OpenCV) services that analyse meetings and videos and simulate focus groups.</Card>
-    <Card title="Infrastructure">Containerised services on Kubernetes on EC2, with RDS, S3, CI/CD, Auth0 and Stripe.</Card>
+    <Card title="The web platform">Next.js and Postgres, from first commit to version 1.14: accounts, workspaces and projects with eleven roles and per-project budgets, billing, and the backend for the iOS app.</Card>
+    <Card title="Mave, the research agent">A triage step decides whether to ask a clarifying question; a planning step picks web search, news, SEO data and synthetic personas; then the answer is written with up to eight tool calls, every phase traced.</Card>
+    <Card title="Pipelines">Eight Trigger.dev jobs that analyse videos and meetings, run synthetic focus groups, learn a brand's voice, keep the knowledge base fresh and write news digests.</Card>
+    <Card title="The desktop agent">A Tauri app built on an open-source agent engine, which I turned into a product: Auth0 login, Stripe plans, credits, and a metered proxy in front of the model.</Card>
+    <Card title="Infrastructure">Containers on Kubernetes (EKS) on EC2 behind a load balancer with a firewall, Postgres on RDS, S3, autoscaling and GitHub Actions deploys.</Card>
+    <Card title="The team">Led the developers who joined as the platform grew, and wrote about half of the second codebase's commits myself.</Card>
   </Cards>
 </Section>
 
 <ExplodedSection />
 
-<Section
-  title="Hard calls"
-  todo="Three decisions, each with what you weighed, what you chose and what it cost or saved. For example: why the desktop agent is Rust and Tauri rather than Electron; how long video jobs were queued, retried and kept cheap; what the agent is allowed to do without asking."
-/>
+<Section title="Hard calls">
+  <div>
+    <HardCall number="01" title="Video jobs that pick up where they stopped">
+      A long video is cut into chunks, each a 2×2 grid of frames plus its transcript. Finished chunks are kept, so a retry skips them instead of paying for them twice, and each chunk sees at most the five before it, which keeps the context inside the model's limits.
+    </HardCall>
+    <HardCall number="02" title="Retries that wait for the rate limit">
+      Focus groups make many model calls at once. Instead of retrying blindly, the job reads the provider's rate-limit headers and schedules the retry for the moment the limit resets, and it stops at once when the quota itself has run out.
+    </HardCall>
+    <HardCall number="03" title="Every answer leaves a trace">
+      The agent records each phase it goes through, with its duration and what it decided. That trace is what the Timeline tab shows, so a researcher can see why Mave searched, which personas it used and where the time went.
+    </HardCall>
+  </div>
+</Section>
 
 <Stats>
   <Stat value="120+" label="Companies">Including Coca-Cola, Coinbase, Instructure, Morningstar, PitchBook, S&P Global and Spotify</Stat>
