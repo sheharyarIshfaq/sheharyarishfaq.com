@@ -1,23 +1,74 @@
 export const meta = {
   title: "AIWrappers",
   number: "03",
-  lede: "Describe a tool in plain words and an agent builds it as a web app on your own domain.",
-  description: "AIWrappers case study: an agent that builds AI tools as web apps on each customer's own domain, with 39 models from five providers behind one API.",
+  lede: "Describe an AI tool in plain words and an agent builds it as a web app on your own domain, ready to share or sell.",
+  description: "AIWrappers case study: an agent that builds AI tools as web apps on each customer's own domain, routing 38 models from five providers, with paid access.",
   facts: [
     ["Type", "Client project"],
     ["When", "2025"],
-    ["Models", "39 models, 5 providers"],
+    ["Models", "38 models, 5 providers"],
     ["Stack", "Next.js, PostgreSQL, Stripe Connect"],
   ],
-  published: "2026-10-20",
+  published: "2026-10-21",
 };
 
-<Screenshot todo="A screenshot of AIWrappers, and confirmation that it can be named as a client project." />
+<ReportFigure
+  lead
+  src="/work/aiwrappers/published"
+  widths={[900, 1600]}
+  width={2880}
+  height={1720}
+  alt="A generated app called Product description writer, with fields for the product name, key features and tone, and a Generate button."
+  caption="A small app built on AIWrappers, served on its own subdomain. Recreated locally with sample data."
+/>
 
 <Section title="What it does">
-  Someone describes an AI tool in plain words. An agent builds it as a working web app on the customer's own domain, and every app shares one inference layer over 39 models from five providers.
+  AIWrappers lets someone without code turn a prompt into a product. They describe the tool they want, an agent designs it (the form, the instructions for the model, the colours and the copy), and it goes live on a subdomain or their own domain. They can keep it public, protect it with a password, or charge for it.
 
-  <ProjectFigure slug="aiwrappers" />
+  <ReportFigure
+    src="/work/aiwrappers/creator"
+    widths={[900, 1600]}
+    width={2880}
+    height={1720}
+    alt="The AI Creator Studio, with options to create a new app with AI or to continue editing an existing one."
+    caption="The AI Creator: start a new app from a description, or keep editing one with the agent."
+  />
+</Section>
+
+<Section title="How it works">
+  <Cards>
+    <Card title="The creator agent">GPT-4o turns the description into the app's configuration, with one tool to design a logo. It is scoped to single-screen tools, input then output, and declines multi-page apps, games and dashboards.</Card>
+    <Card title="One deployment, many domains">Middleware reads the hostname and serves the right app, for subdomains and custom domains alike. Custom domains are added and verified through the Vercel API.</Card>
+    <Card title="Model routing">38 models from OpenAI, Anthropic, Google, Replicate and Fal, across text, image, video and audio. Each request is routed by model family, using the app owner's own encrypted API keys.</Card>
+    <Card title="Paid access">Apps can be public, password-protected or paid. Stripe Connect sends each payment straight to the owner, and buyers get an access link by email, with no account to create.</Card>
+  </Cards>
+
+  <ReportFigure
+    src="/work/aiwrappers/models"
+    widths={[900, 1600]}
+    width={2880}
+    height={1720}
+    alt="The model picker in the app builder, showing GPT-5 Pro, GPT-5 and GPT-4o with their capabilities and a note that an OpenAI integration is required."
+    caption="Choosing a model in the builder. Each provider needs the owner's own key, connected once under Integrations."
+  />
+</Section>
+
+<Section title="My part">
+  I built the platform: the creator agent, the app builder, model routing, custom domains, access control and Stripe Connect payments, about 100 of the project's 174 commits and every commit to its core files. It began as a prototype in March 2025 and was extended through the year, most recently with newer models and a security update to Next.js.
 
   [Watch the demo](https://www.youtube.com/watch?v=U9hBx-xnyeM)
+</Section>
+
+<Section title="Hard calls">
+  <div>
+    <HardCall number="01" title="Generate configuration, not code">
+      The agent doesn't write code; it writes an app's settings: a form schema, a system prompt and a theme. Every app then runs on the same tested codebase, so a fix or a new model reaches all of them at once.
+    </HardCall>
+    <HardCall number="02" title="Owners bring their own keys">
+      Each app owner connects their own provider keys, stored encrypted and used only for their apps. The platform never pays for someone else's inference, and owners keep control of their usage and costs.
+    </HardCall>
+    <HardCall number="03" title="A deliberately narrow agent">
+      The agent only builds single-screen tools and says no to everything else. A smaller promise it can keep beats a general one it can't, and the refusal is written into its instructions.
+    </HardCall>
+  </div>
 </Section>
