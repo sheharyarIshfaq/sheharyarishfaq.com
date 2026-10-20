@@ -8,7 +8,7 @@ My personal website: who I am, the work I've led, and how to reach me. I'm an AI
 - Tailwind CSS 4, with the design tokens in `src/styles/tokens.css`
 - Archivo and Doto through `next/font`, self-hosted at build time
 - Case studies in MDX (`content/work/*.mdx`); every other piece of copy in `content/*.json`
-- Hosted as static assets on Cloudflare Workers
+- Hosted on Vercel as a static export
 - Playwright and axe for screenshots and accessibility checks
 
 ## Running it
@@ -25,7 +25,7 @@ pnpm typecheck
 pnpm test:e2e       # screenshots every page at 375, 768 and 1440 in both themes, and runs axe
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to the site's address before building, so canonical URLs, Open Graph images and the sitemap point at the right domain.
+Canonical URLs, Open Graph images and the sitemap use `NEXT_PUBLIC_SITE_URL`, falling back to the Vercel production address.
 
 ## How it's built
 
@@ -37,7 +37,4 @@ Photos are cropped and converted to AVIF, WebP and JPEG at build time by `script
 
 ## Deploying
 
-```bash
-pnpm dlx wrangler login   # once
-pnpm deploy               # builds, then uploads out/ to Cloudflare Workers
-```
+Import the repository on Vercel; it detects Next.js and serves the static export. Set `NEXT_PUBLIC_SITE_URL` once the custom domain is live.

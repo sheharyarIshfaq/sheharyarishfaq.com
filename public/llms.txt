@@ -30,4 +30,3 @@ I build AI agents and the systems they run on.
 - GitHub: https://github.com/sheharyarIshfaq
 - Medium: https://medium.com/@sheharyarishfaq
 - Fiverr: https://www.fiverr.com/sheharyar__
-- Aivex Labs: https://aivex.co

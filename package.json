@@ -9,8 +9,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "start:static": "serve out",
     "test:e2e": "playwright test",
-    "prebuild": "node scripts/optimize-images.mjs",
-    "deploy": "pnpm build && wrangler deploy"
+    "prebuild": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -33,8 +32,7 @@
     "serve": "^14.2.6",
     "sharp": "~0.34.5",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "wrangler": "^4.151.2"
+    "typescript": "^5"
   },
   "packageManager": "pnpm@10.15.0"
 }

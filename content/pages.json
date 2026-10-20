@@ -17,7 +17,7 @@
     "sections": [
       {
         "title": "Stack",
-        "text": "Next.js with TypeScript and Tailwind CSS, exported as static HTML and served from Cloudflare. Case studies are written in MDX."
+        "text": "Next.js with TypeScript and Tailwind CSS, exported as static HTML and served from Vercel. Case studies are written in MDX."
       },
       {
         "title": "Type",
