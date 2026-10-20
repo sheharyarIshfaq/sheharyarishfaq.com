@@ -22,7 +22,7 @@
       "trace": [
         { "label": "Desktop app", "depth": 0, "start": 0, "width": 100, "thin": true, "note": "The window the question is typed into." },
         { "label": "Planning model", "depth": 1, "start": 4, "width": 18, "note": "Tool-calling agents on OpenAI and Anthropic models." },
-        { "label": "MCP tools", "depth": 1, "start": 22, "width": 22, "note": "Servers I wrote for reports, meetings and video." },
+        { "label": "MCP tools", "depth": 1, "start": 22, "width": 22, "note": "Servers that expose reports, meetings and video to the agent." },
         { "label": "Retrieval", "depth": 2, "start": 26, "width": 26, "note": "Passages from the client's documents and meetings." },
         { "label": "Streamed answer", "depth": 1, "start": 56, "width": 40, "note": "Word by word, with sources." },
         { "label": "Kubernetes", "depth": 0, "start": 0, "width": 100, "thin": true, "note": "Everything above runs here, on AWS." }
@@ -40,14 +40,14 @@
       "link": { "label": "See the project", "href": "/work/bina" },
       "repo": "https://github.com/sheharyarIshfaq/LAWxMISTRAL-Hackathon-Backend",
       "figure": "quote-check",
-      "paragraph": "Bina turns French data-protection rulings into briefs for litigation funders. A funder can't act on a brief that misquotes the ruling, so the backend I built won't publish one until every quoted sentence is found, word for word, in the original.",
+      "paragraph": "Bina turns French data-protection rulings into briefs for litigation funders. A funder can't act on a brief that misquotes the ruling, so the backend I built checks every quoted sentence, word for word, against the original, and keeps any it can't find out of the pitch.",
       "quoteCheck": {
         "briefLabel": "Draft brief",
         "brief": ["The regulator found that ", { "quote": "the company did not implement measures appropriate to the risk", "found": true }, " and noted that ", { "quote": "customers were never informed of the breach", "found": false }, "."],
         "sourceLabel": "Source ruling, page 14",
         "source": "… the restricted committee considers that the company did not implement measures appropriate to the risk, within the meaning of Article 32 of the GDPR. The customers concerned were informed by email on …",
         "idle": "Press the button to check both quotes.",
-        "result": "First quote found on page 14. Second quote isn't in the source, so the brief is held back.",
+        "result": "First quote found on page 14. Second quote isn't in the source, so it's flagged and kept out of the pitch.",
         "button": "Check the quotes",
         "reset": "Reset",
         "caption": "The quote check, on example text."
@@ -58,20 +58,20 @@
       "number": "03",
       "name": "AIWrappers",
       "meta": "Client project, 2025",
-      "chips": ["39 models", "Paying customers"],
+      "chips": ["38 models", "Paying customers"],
       "link": { "label": "Watch the demo", "href": "https://www.youtube.com/watch?v=U9hBx-xnyeM" },
       "figure": "fan-out",
-      "paragraph": "Someone describes an AI tool in plain words. An agent builds it as a working web app on the customer's own domain, and every app shares one inference layer over 39 models from five providers.",
+      "paragraph": "Someone describes an AI tool in plain words. An agent builds it as a working web app on the customer's own domain, and every app runs on one platform that routes its requests to 38 models from five providers, on the owner's own keys.",
       "fanOut": {
         "agent": "Creator agent",
         "apps": ["app.client-one.com", "tools.client-two.io", "ai.client-three.com", "+ more apps"],
-        "layer": "39 models, 5 providers, one API",
-        "caption": "One agent builds many apps; every request flows into one shared inference layer."
+        "layer": "38 models, 5 providers, one router",
+        "caption": "One agent builds many apps; every request goes through one model router, on the owner's own keys."
       }
     }
   ],
   "caseStudyNotFeatured": [
-    { "slug": "caracat", "name": "Caracat at LIP6", "meta": "Research project, 2026", "summary": "Analysed Caracat, an open-source Rust traceroute-probing engine, against its C++ predecessor and validated identical behaviour across ICMP, UDP, IPv4 and IPv6. Supervised by Timur Friedman (Dioptra). Graded 86/100, third of twelve.", "links": ["https://github.com/dioptra-io/caracat"] },
+    { "slug": "caracat", "name": "Caracat at LIP6", "meta": "Research project, 2026", "summary": "With a teammate, compared Caracat, an open-source Rust traceroute-probing engine, with its C++ predecessor Caracal and found matching outputs across ICMP, UDP, IPv4 and IPv6. Part of a four-person team project supervised by Timur Friedman (Dioptra). Graded 86/100, third of twelve.", "links": ["https://github.com/dioptra-io/caracat"] },
     { "slug": "birdclef", "name": "BirdCLEF+ 2026", "meta": "Machine learning, 2026", "summary": "Classical ML pipeline classifying 206 bird species from 35.5K+ recordings with librosa features; benchmarked five models and reached 0.922 macro ROC-AUC (5-fold CV).", "links": ["https://github.com/sheharyarIshfaq/birdclef-2026-classical-ml"] }
   ]
 }
