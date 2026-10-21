@@ -9,24 +9,33 @@ I build AI agents and the systems they run on.
 - Six-month internship in Paris, on site or hybrid, from 15 February 2027.
 - Sorbonne signs the convention de stage, so there's no visa paperwork on your side.
 - Email: hello@sheharyarishfaq.com
+- [Hire](https://sheharyarishfaq.com/hire): Sheharyar Ishfaq, AI engineer in Paris, is open to a six-month internship from 15 February 2027. Sorbonne signs the convention de stage, so no visa paperwork.
+- [CV](https://sheharyarishfaq.com/cv/Sheharyar_Ishfaq_CV.pdf)
+- [Academic CV](https://sheharyarishfaq.com/cv/Sheharyar_Ishfaq_CV_academic.pdf)
 
 ## Selected work
 
-- Mavera (lead software engineer, 2024 to 2026): AI market-intelligence platform used by 120+ companies. Built it end to end, then led the developers who joined. Next.js, Rust, MCP, Kubernetes.
-- Bina.ai (Mistral LLM × Law Hackathon, Paris, October 2026, first place, team of five): briefs for litigation funders, with every quote checked word for word against the ruling.
-- AIWrappers (client project, 2025): an agent builds AI tools as web apps on the customer's own domain, routing requests to 38 models from five providers on each owner's own keys.
-- Caracat at LIP6 (research project, 2026): with a teammate, compared a Rust traceroute engine with its C++ predecessor and found matching outputs. Graded 86/100, third of twelve.
-- BirdCLEF+ 2026 (machine learning): classical ML on 35.5K recordings of 206 bird species, 0.922 macro ROC-AUC.
+- [Mavera](https://sheharyarishfaq.com/work/mavera) (lead software engineer, 2024 to 2026): AI market-intelligence platform used by 120+ companies. Built it end to end, then led the developers who joined. Next.js, Rust, MCP, Kubernetes.
+- [Bina.ai](https://sheharyarishfaq.com/work/bina) (Mistral LLM × Law Hackathon, Paris, October 2026, first place, team of five): briefs for litigation funders, with every quote checked word for word against the ruling.
+- [AIWrappers](https://sheharyarishfaq.com/work/aiwrappers) (client project, 2025): an agent builds AI tools as web apps on the customer's own domain, routing requests to 38 models from five providers on each owner's own keys.
+- [Caracat at LIP6](https://sheharyarishfaq.com/work/caracat) (research project, 2026): with a teammate, compared a Rust traceroute engine with its C++ predecessor and found matching outputs. Graded 86/100, third of twelve.
+- [BirdCLEF+ 2026](https://sheharyarishfaq.com/work/birdclef) (machine learning): classical ML on 35.5K recordings of 206 bird species, 0.922 macro ROC-AUC.
 
 ## Writing
 
-- Uploading 20 to 30 GB files to S3, straight from the browser: https://medium.com/@sheharyarishfaq/handling-large-file-uploads-20gb-in-node-js-with-s3-multipart-upload-using-signed-urls-b5e41c1cd930
-- How to deploy a Next.js app on AWS EC2 with Nginx and HTTPS: https://medium.com/@sheharyarishfaq/how-to-deploy-a-next-js-app-on-aws-ec2-with-nginx-and-https-step-by-step-guide-7024f5426c03
-- Subdomain-based routing in Next.js for multi-tenant apps: https://medium.com/@sheharyarishfaq/subdomain-based-routing-in-next-js-a-complete-guide-for-multi-tenant-applications-1576244e799a
+- [Uploading 20 to 30 GB files to S3, straight from the browser](https://medium.com/@sheharyarishfaq/handling-large-file-uploads-20gb-in-node-js-with-s3-multipart-upload-using-signed-urls-b5e41c1cd930)
+- [How to deploy a Next.js app on AWS EC2 with Nginx and HTTPS](https://medium.com/@sheharyarishfaq/how-to-deploy-a-next-js-app-on-aws-ec2-with-nginx-and-https-step-by-step-guide-7024f5426c03)
+- [Subdomain-based routing in Next.js for multi-tenant apps](https://medium.com/@sheharyarishfaq/subdomain-based-routing-in-next-js-a-complete-guide-for-multi-tenant-applications-1576244e799a)
 
 ## Links
 
-- LinkedIn: https://www.linkedin.com/in/sheharyar-ishfaq/
-- GitHub: https://github.com/sheharyarIshfaq
-- Medium: https://medium.com/@sheharyarishfaq
-- Fiverr: https://www.fiverr.com/sheharyar__
+- [LinkedIn](https://www.linkedin.com/in/sheharyar-ishfaq/)
+- [GitHub](https://github.com/sheharyarIshfaq)
+- [Medium](https://medium.com/@sheharyarishfaq)
+- [Fiverr](https://www.fiverr.com/sheharyar__)
+
+## Optional
+
+- [Research](https://sheharyarishfaq.com/research): Research and coursework of Sheharyar Ishfaq, MSc Computer Science at Sorbonne: GPU programming, parallel computing and a Rust traceroute engine at LIP6.
+- [Now](https://sheharyarishfaq.com/now): What Sheharyar Ishfaq is doing now: final year of an MSc at Sorbonne, with GPU programming in CUDA, parallel computing with MPI and deep learning for vision.
+- [Colophon](https://sheharyarishfaq.com/colophon): How this site is built: Next.js, TypeScript and Tailwind CSS exported as static pages, Archivo and Doto type, and figures drawn with CSS and SVG in the browser.
