@@ -1,4 +1,5 @@
 import home from "@content/home.json";
+import { trackLink } from "@/lib/analytics";
 import { isReady, site } from "@/lib/site";
 import { CopyEmail } from "./CopyEmail";
 
@@ -33,7 +34,7 @@ export function Contact() {
           <ul className="flex justify-center gap-[22px] text-[15px] font-semibold">
             {links.map(([label, href]) => (
               <li key={label}>
-                <a href={href} target="_blank" rel="noopener me" className="underline decoration-2 underline-offset-4">
+                <a href={href} {...trackLink(href)} target="_blank" rel="noopener me" className="underline decoration-2 underline-offset-4">
                   {label}
                 </a>
               </li>

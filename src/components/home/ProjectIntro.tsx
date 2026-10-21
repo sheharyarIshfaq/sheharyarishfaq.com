@@ -1,5 +1,6 @@
 import { Chip } from "@/components/ui/Chip";
 import { Stamp } from "@/components/ui/Stamp";
+import { trackLink } from "@/lib/analytics";
 import type { Project } from "@/lib/work";
 
 export function ProjectIntro({ project }: { project: Project }) {
@@ -22,6 +23,7 @@ export function ProjectIntro({ project }: { project: Project }) {
       {project.stamp && <Stamp className="mt-2.5">{project.stamp}</Stamp>}
       <a
         href={project.link.href}
+        {...trackLink(project.link.href)}
         {...(external && { target: "_blank", rel: "noopener" })}
         className="pt-2 font-bold text-blue-text underline underline-offset-4"
       >

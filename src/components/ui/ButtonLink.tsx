@@ -1,4 +1,5 @@
 import type { ComponentProps } from "react";
+import { trackLink } from "@/lib/analytics";
 
 type ButtonLinkProps = ComponentProps<"a"> & {
   variant?: "primary" | "secondary";
@@ -12,6 +13,7 @@ const variants = {
 export function ButtonLink({ variant = "primary", className = "", ...props }: ButtonLinkProps) {
   return (
     <a
+      {...(props.href && trackLink(props.href))}
       className={`inline-flex min-h-[50px] items-center rounded-[14px] px-6 text-[17px] font-bold transition-[background-color,border-color,scale] duration-300 active:scale-[0.98] ${variants[variant]} ${className}`}
       {...props}
     />

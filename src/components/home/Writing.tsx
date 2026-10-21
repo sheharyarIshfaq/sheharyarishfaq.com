@@ -1,4 +1,5 @@
 import home from "@content/home.json";
+import { trackLink } from "@/lib/analytics";
 import { isReady } from "@/lib/site";
 import { ArticleCover } from "./ArticleCover";
 
@@ -29,7 +30,7 @@ export function Writing() {
         </h2>
         <p className="text-[15px] text-ink-2">{sub}</p>
         {isReady(more.href) && (
-          <a href={more.href} target="_blank" rel="noopener" className="pt-2 font-bold text-blue-text underline underline-offset-4">
+          <a href={more.href} {...trackLink(more.href)} target="_blank" rel="noopener" className="pt-2 font-bold text-blue-text underline underline-offset-4">
             {more.label}
           </a>
         )}
@@ -39,6 +40,7 @@ export function Writing() {
         {featured && (
           <a
             href={featured.href}
+            {...trackLink(featured.href)}
             target="_blank"
             rel="noopener"
             className="group grid gap-5 rounded-[22px] border border-line bg-card p-4 transition-colors duration-300 hover:border-plate-line sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] sm:p-5"
@@ -67,6 +69,7 @@ export function Writing() {
             <a
               key={article.href}
               href={article.href}
+              {...trackLink(article.href)}
               target="_blank"
               rel="noopener"
               className="group flex flex-col gap-3 rounded-[22px] border border-line bg-card p-4 transition-colors duration-300 hover:border-plate-line"

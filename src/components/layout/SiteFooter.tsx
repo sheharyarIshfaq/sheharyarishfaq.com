@@ -3,6 +3,7 @@ import pages from "@content/pages.json";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LogoMark } from "@/components/Logo";
+import { trackLink } from "@/lib/analytics";
 import { isAvailable } from "@/lib/files";
 import { site } from "@/lib/site";
 import { MadeWith } from "./MadeWith";
@@ -49,7 +50,7 @@ export function SiteFooter() {
             <span className="size-2 shrink-0 animate-pulse-ring rounded-full bg-green motion-reduce:animate-none" />
             {site.availability.pill}
           </span>
-          <a href={`mailto:${site.email}`} className="text-link text-[15px] font-semibold">
+          <a href={`mailto:${site.email}`} {...trackLink(`mailto:${site.email}`)} className="text-link text-[15px] font-semibold">
             {site.email}
           </a>
           {place && (
@@ -72,7 +73,7 @@ export function SiteFooter() {
         <Column title={footer.elsewhere}>
           {elsewhere.map((link) => (
             <li key={link.label}>
-              <a href={link.href} {...(link.href.startsWith("http") && { target: "_blank", rel: "noopener me" })} className={linkClass}>
+              <a href={link.href} {...trackLink(link.href)} {...(link.href.startsWith("http") && { target: "_blank", rel: "noopener me" })} className={linkClass}>
                 {link.label}
               </a>
             </li>

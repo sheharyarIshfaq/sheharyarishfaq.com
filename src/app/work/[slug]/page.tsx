@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ReadTracker } from "@/components/case-study/ReadTracker";
 import { JsonLd } from "@/components/JsonLd";
+import { trackLink } from "@/lib/analytics";
 import { caseStudySlugs, loadCaseStudy, nextCaseStudy } from "@/lib/case-studies";
 import { pageMetadata } from "@/lib/metadata";
 import { absoluteUrl, PERSON_ID } from "@/lib/site";
@@ -31,7 +33,8 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
 
   return (
     <main id="main" className="container-page">
-      <article aria-labelledby="case-study-title">
+      <article aria-labelledby="case-study-title" className="relative">
+        <ReadTracker slug={slug} />
         <header className="flex max-w-[900px] flex-col gap-[18px] pt-10 pb-10 md:pt-16">
           {meta.number && <span className="font-num text-[40px] leading-none text-blue-text">{meta.number}</span>}
           <h1 id="case-study-title" className="text-[44px] leading-[0.98] font-[880] tracking-[-0.05em] font-stretch-[120%] md:text-[72px]">
@@ -61,7 +64,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             All work
           </Link>
           {next && (
-            <Link href={`/work/${next.slug}`} className="flex items-center gap-3.5">
+            <Link href={`/work/${next.slug}`} {...trackLink(`/work/${next.slug}`)} className="flex items-center gap-3.5">
               <span className="text-sm text-ink-2">Next</span>
               {next.meta.number && <span className="font-num text-[22px] text-blue-text">{next.meta.number}</span>}
               <span className="text-2xl font-[850] tracking-[-0.03em] font-stretch-[115%]">{next.meta.title}</span>

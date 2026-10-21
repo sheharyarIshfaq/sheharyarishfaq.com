@@ -1,5 +1,6 @@
 import home from "@content/home.json";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { trackLink } from "@/lib/analytics";
 
 export function Recommendations() {
   const { title, items, more } = home.recommendations;
@@ -36,7 +37,7 @@ export function Recommendations() {
           ),
         )}
       </div>
-      <a href={more.href} target="_blank" rel="noopener" className="self-start font-bold text-blue-text underline underline-offset-4">
+      <a href={more.href} {...trackLink(more.href)} target="_blank" rel="noopener" className="self-start font-bold text-blue-text underline underline-offset-4">
         {more.label}
       </a>
     </section>

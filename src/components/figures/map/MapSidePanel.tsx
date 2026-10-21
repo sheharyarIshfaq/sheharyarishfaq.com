@@ -1,3 +1,4 @@
+import { trackLink } from "@/lib/analytics";
 import { isReady } from "@/lib/site";
 import { pointById } from "@/lib/map";
 
@@ -51,6 +52,7 @@ export function MapSidePanel({ selected, onSelect }: MapSidePanelProps) {
       {isReady(ctaHref) && (
         <a
           href={ctaHref}
+          {...trackLink(ctaHref)}
           {...(external && { target: "_blank", rel: "noopener" })}
           className="mt-auto inline-flex min-h-[46px] items-center justify-center rounded-[14px] bg-blue px-4 font-bold text-on-blue transition-colors duration-300 hover:bg-[color-mix(in_srgb,var(--blue)_88%,black)]"
         >

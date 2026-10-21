@@ -4,6 +4,7 @@ import work from "@content/work.json";
 import { Section } from "@/components/case-study/blocks";
 import { Chip } from "@/components/ui/Chip";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { trackLink } from "@/lib/analytics";
 import { isAvailable } from "@/lib/files";
 import { pointByName } from "@/lib/map";
 import { pageMetadata } from "@/lib/metadata";
@@ -38,7 +39,7 @@ export default function ResearchPage() {
       <Section title={caracat.name}>
         <p>{caracat.summary}</p>
         <p>
-          <a href={`/work/${caracat.slug}`} className="font-bold text-blue-text underline underline-offset-4">
+          <a href={`/work/${caracat.slug}`} {...trackLink(`/work/${caracat.slug}`)} className="font-bold text-blue-text underline underline-offset-4">
             {pointByName("Caracat at LIP6").cta[0]}
           </a>
         </p>
@@ -47,7 +48,7 @@ export default function ResearchPage() {
       <Section title={birdclef.name}>
         <p>{birdclef.summary}</p>
         <p>
-          <a href={`/work/${birdclef.slug}`} className="font-bold text-blue-text underline underline-offset-4">
+          <a href={`/work/${birdclef.slug}`} {...trackLink(`/work/${birdclef.slug}`)} className="font-bold text-blue-text underline underline-offset-4">
             {pointByName("BirdCLEF+").cta[0]}
           </a>
         </p>
@@ -56,6 +57,7 @@ export default function ResearchPage() {
       {isAvailable(site.links.cvAcademic) && (
         <a
           href={site.links.cvAcademic}
+          {...trackLink(site.links.cvAcademic)}
           download
           className="inline-flex min-h-[50px] items-center rounded-[14px] bg-blue px-6 font-bold text-on-blue"
         >

@@ -35,6 +35,7 @@ export function CopyEmail({ email, label, copiedLabel }: CopyEmailProps) {
     <>
       <a
         href={`mailto:${email}`}
+        data-umami-event="email-copy"
         onClick={copy}
         className="inline-flex min-h-14 items-center justify-center rounded-[16px] bg-paper px-5 text-[17px] font-extrabold text-blue-text transition-[scale] duration-300 active:scale-[0.98]"
       >

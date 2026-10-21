@@ -1,6 +1,7 @@
 import pages from "@content/pages.json";
 import { Section } from "@/components/case-study/blocks";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { trackLink } from "@/lib/analytics";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
@@ -21,7 +22,7 @@ export default function PrivacyPage() {
             {index === last && (
               <>
                 {" "}
-                <a href={`mailto:${site.email}`} className="text-link">
+                <a href={`mailto:${site.email}`} {...trackLink(`mailto:${site.email}`)} className="text-link">
                   {site.email}
                 </a>
                 .

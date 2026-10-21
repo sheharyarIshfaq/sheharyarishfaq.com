@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { trackLink } from "@/lib/analytics";
 
 type MobileMenuProps = {
   links: { label: string; href: string }[];
@@ -45,6 +46,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
             <li key={link.href}>
               <a
                 href={link.href}
+                {...trackLink(link.href)}
                 onClick={() => setOpen(false)}
                 className="flex min-h-12 items-center border-t border-line text-lg font-semibold text-ink"
               >

@@ -3,6 +3,7 @@ import { Bars, Card, Cards, Compare, HardCall, Quote, ReportFigure, Screenshot, 
 import { ExplodedSection } from "@/components/case-study/ExplodedSection";
 import { ProjectFigure } from "@/components/case-study/ProjectFigure";
 import { Todo } from "@/components/case-study/Todo";
+import { trackLink } from "@/lib/analytics";
 
 const components: MDXComponents = {
   Bars,
@@ -19,7 +20,7 @@ const components: MDXComponents = {
   Stat,
   Stats,
   Todo,
-  a: (props) => <a {...props} className="text-link" />,
+  a: (props) => <a {...props} {...(props.href && trackLink(props.href))} className="text-link" />,
 };
 
 export function useMDXComponents(): MDXComponents {

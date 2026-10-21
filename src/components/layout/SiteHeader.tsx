@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/Logo";
+import { trackLink } from "@/lib/analytics";
 import { isAvailable } from "@/lib/files";
 import { site } from "@/lib/site";
 import { MobileMenu } from "./MobileMenu";
@@ -22,7 +23,7 @@ export function SiteHeader() {
             <ul className="flex items-center gap-[26px] text-[15px] font-medium text-ink-2">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition-colors duration-300 hover:text-ink">
+                  <a href={link.href} {...trackLink(link.href)} className="transition-colors duration-300 hover:text-ink">
                     {link.label}
                   </a>
                 </li>
