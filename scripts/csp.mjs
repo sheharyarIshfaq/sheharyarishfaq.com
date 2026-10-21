@@ -33,11 +33,11 @@ for (const file of await htmlFiles(out)) {
 
 const policy = [
   "default-src 'self'",
-  `script-src 'self' ${[...hashes].sort().join(" ")}`,
+  `script-src 'self' https://static.cloudflareinsights.com https://cloud.umami.is ${[...hashes].sort().join(" ")}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self' https://cloudflareinsights.com https://gateway.umami.is",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
