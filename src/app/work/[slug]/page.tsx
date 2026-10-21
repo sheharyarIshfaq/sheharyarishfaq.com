@@ -4,8 +4,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { trackLink } from "@/lib/analytics";
 import { caseStudySlugs, loadCaseStudy, nextCaseStudy } from "@/lib/case-studies";
 import { pageMetadata } from "@/lib/metadata";
-import { absoluteUrl, PERSON_ID } from "@/lib/site";
-import { breadcrumbs } from "@/lib/structured-data";
+import { absoluteUrl } from "@/lib/site";
+import { breadcrumbs, personReference } from "@/lib/structured-data";
 
 export const dynamicParams = false;
 
@@ -83,7 +83,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           url: absoluteUrl(path),
           image: absoluteUrl(`${path}/og.png`),
           datePublished: meta.published,
-          author: { "@id": PERSON_ID },
+          author: personReference,
           about: meta.lede,
         }}
       />

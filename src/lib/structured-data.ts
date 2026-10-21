@@ -60,13 +60,21 @@ export const person = {
   ...(hackathon && { award: `First place, ${hackathon}` }),
 };
 
+// Pages other than the homepage don't carry the full Person, so references to it repeat the name and URL.
+export const personReference = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: site.name,
+  url: SITE_URL,
+};
+
 export const website = {
   "@type": "WebSite",
   "@id": WEBSITE_ID,
   name: site.name,
   url: SITE_URL,
   inLanguage: "en-GB",
-  publisher: { "@id": PERSON_ID },
+  publisher: personReference,
 };
 
 export function profilePage() {
