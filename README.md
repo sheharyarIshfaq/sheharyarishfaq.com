@@ -1,6 +1,6 @@
 # sheharyarishfaq.com
 
-[![The homepage of sheharyarishfaq.com](src/app/og.png)](https://sheharyarishfaq.com)
+[![The homepage of sheharyarishfaq.com](https://sheharyarishfaq.com/og.png)](https://sheharyarishfaq.com)
 
 **Live at [sheharyarishfaq.com](https://sheharyarishfaq.com)**
 
