@@ -55,7 +55,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en-GB" className={`${archivo.variable} ${doto.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <Analytics />
       </head>
       <body>
         <a
@@ -68,6 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
         <SiteFooter />
         <JsonLd data={{ "@context": "https://schema.org", ...website }} />
+        <Analytics />
       </body>
     </html>
   );
