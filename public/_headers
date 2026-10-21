@@ -1,0 +1,11 @@
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Hashed or resized files never change at the same URL.
+/_next/static/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/sized/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
