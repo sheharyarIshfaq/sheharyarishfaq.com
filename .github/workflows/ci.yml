@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+
+      # LinkedIn and Medium refuse requests from bots, so their links always look broken.
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --root-dir ${{ github.workspace }}/out
+            --fallback-extensions html
+            --exclude linkedin.com
+            --exclude medium.com
+            --no-progress
+            'out/**/*.html'
+          fail: true
+
+      - name: Lighthouse
+        run: npx @lhci/cli@0.15.x autorun
