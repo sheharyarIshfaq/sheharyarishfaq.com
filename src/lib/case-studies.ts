@@ -5,6 +5,8 @@ export type CaseStudyMeta = {
   number?: string;
   lede: string;
   description: string;
+  // Short role for the page title, so search results show what I did.
+  role: string;
   facts: [label: string, value: string][];
   published: string;
 };

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/work/[slug]">) {
   const { slug } = await params;
   const { meta } = await loadCaseStudy(slug);
   return pageMetadata({
-    title: `${meta.title} case study`,
+    title: `${meta.title} case study: ${meta.role}`,
     description: meta.description,
     path: `/work/${slug}`,
     type: "article",
