@@ -1,4 +1,8 @@
-# sheharyar-site
+# sheharyarishfaq.com
+
+[![The homepage of sheharyarishfaq.com](src/app/og.png)](https://sheharyarishfaq.com)
+
+**Live at [sheharyarishfaq.com](https://sheharyarishfaq.com)**
 
 My personal website: who I am, the work I've led, and how to reach me. I'm an AI engineer in Paris, finishing an MSc in Computer Science at Sorbonne and open to a six-month internship from 15 February 2027.
 
