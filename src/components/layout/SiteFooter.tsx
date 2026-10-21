@@ -11,6 +11,7 @@ const morePages = [
   { href: "/now", label: home.now.title },
   { href: "/research", label: pages.research.title },
   { href: "/colophon", label: pages.colophon.title },
+  { href: "/privacy", label: pages.privacy.title },
 ];
 
 const elsewhere = [

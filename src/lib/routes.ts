@@ -16,4 +16,5 @@ export const routes: Route[] = [
   { path: "/hire", source: "content/pages.json", priority: 0.6 },
   { path: "/now", source: "content/home.json", priority: 0.5 },
   { path: "/colophon", source: "content/pages.json", priority: 0.3 },
+  { path: "/privacy", source: "content/pages.json", priority: 0.2 },
 ];

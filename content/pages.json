@@ -29,6 +29,32 @@
       }
     ]
   },
+  "privacy": {
+    "title": "Privacy",
+    "description": "Privacy on this site: no cookies, no personal data collected, cookieless Cloudflare Web Analytics, and a saved theme choice that never leaves your device.",
+    "sections": [
+      {
+        "title": "No cookies, no personal data",
+        "text": "This site sets no cookies and collects no personal data. There are no forms, no accounts and no tracking across other sites."
+      },
+      {
+        "title": "Analytics",
+        "text": "Visits are counted with Cloudflare Web Analytics, which is cookieless and doesn't identify you. It shows how many people visit and which pages they read, nothing more."
+      },
+      {
+        "title": "Your theme choice",
+        "text": "If you switch between the light and dark theme, your choice is saved in your browser's localStorage so the site remembers it next time. It never leaves your device."
+      },
+      {
+        "title": "Hosting",
+        "text": "The site is served by Cloudflare, which processes the technical data any web request needs, such as your IP address, to deliver the pages."
+      },
+      {
+        "title": "Questions",
+        "text": "For anything about privacy on this site, write to"
+      }
+    ]
+  },
   "notFound": {
     "title": "Nothing here.",
     "text": "This page doesn't exist, or it moved.",
