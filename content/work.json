@@ -59,7 +59,7 @@
       "name": "AIWrappers",
       "meta": "Client project, 2025",
       "chips": ["38 models", "Paying customers"],
-      "link": { "label": "Watch the demo", "href": "https://www.youtube.com/watch?v=U9hBx-xnyeM" },
+      "link": { "label": "Read the case study", "href": "/work/aiwrappers" },
       "figure": "fan-out",
       "paragraph": "Someone describes an AI tool in plain words. An agent builds it as a working web app on the customer's own domain, and every app runs on one platform that routes its requests to 38 models from five providers, on the owner's own keys.",
       "fanOut": {
