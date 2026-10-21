@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { trackLink } from "@/lib/analytics";
 import { caseStudySlugs, loadCaseStudy, nextCaseStudy } from "@/lib/case-studies";
 import { pageMetadata } from "@/lib/metadata";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, WEBSITE_ID } from "@/lib/site";
 import { breadcrumbs, personReference } from "@/lib/structured-data";
 
 export const dynamicParams = false;
@@ -84,7 +84,9 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           image: absoluteUrl(`${path}/og.png`),
           datePublished: meta.published,
           author: personReference,
-          about: meta.lede,
+          inLanguage: "en-GB",
+          isPartOf: { "@id": WEBSITE_ID },
+          mainEntityOfPage: absoluteUrl(path),
         }}
       />
       <JsonLd data={breadcrumbs([{ name: "Work", path: "/#work" }, { name: meta.title, path }])} />
