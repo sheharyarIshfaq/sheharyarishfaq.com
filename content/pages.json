@@ -31,15 +31,15 @@
   },
   "privacy": {
     "title": "Privacy",
-    "description": "Privacy on this site: no cookies, no personal data collected, cookieless Cloudflare Web Analytics, and a saved theme choice that never leaves your device.",
+    "description": "Privacy on this site: no cookies and no personal data. Cloudflare Web Analytics and Umami count visits anonymously; your theme choice stays on your device.",
     "sections": [
       {
         "title": "No cookies, no personal data",
-        "text": "This site sets no cookies and collects no personal data. There are no forms, no accounts and no tracking across other sites."
+        "text": "This site sets no cookies and collects no personal data. There are no forms and no accounts."
       },
       {
         "title": "Analytics",
-        "text": "Visits are counted with Cloudflare Web Analytics, which is cookieless and doesn't identify you. It shows how many people visit and which pages they read, nothing more."
+        "text": "Two cookieless tools count visits without identifying you. Cloudflare Web Analytics shows how many people visit and which pages they read. Umami counts a few actions, such as downloading the CV, copying the email address or reading a case study to the end, and which site or tagged link brought a visit. Neither stores personal data or follows you to other sites."
       },
       {
         "title": "Your theme choice",
