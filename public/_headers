@@ -1,4 +1,9 @@
 /*
+  Strict-Transport-Security: max-age=15552000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: DENY
   Cache-Control: public, max-age=0, must-revalidate
 
 # Hashed or resized files never change at the same URL.
