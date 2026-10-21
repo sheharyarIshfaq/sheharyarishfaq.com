@@ -105,7 +105,8 @@
     "title": "Let's build something together.",
     "text": "Six-month internship in Paris from 15 February 2027. Sorbonne signs the convention de stage, so there's no visa paperwork on your side. I reply within a day.",
     "copyLabel": "Copy my email",
-    "copiedLabel": "Email copied"
+    "copiedLabel": "Email copied",
+    "bookCallLabel": "Book a 20-minute call"
   },
   "footer": {
     "madeWith": "Made with",

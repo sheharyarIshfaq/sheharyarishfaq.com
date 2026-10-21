@@ -29,13 +29,16 @@ export default function HirePage() {
         ))}
       </dl>
 
-      {isAvailable(home.hero.ctaSecondary.href) && (
-        <div className="pt-8">
+      <div className="flex flex-wrap gap-3 pt-8">
+        {isAvailable(home.hero.ctaSecondary.href) && (
           <ButtonLink href={home.hero.ctaSecondary.href} download>
             {home.hero.ctaSecondary.label}
           </ButtonLink>
-        </div>
-      )}
+        )}
+        <ButtonLink href={site.links.bookCall} variant="secondary" target="_blank" rel="noopener">
+          {home.contact.bookCallLabel}
+        </ButtonLink>
+      </div>
 
       <Contact />
     </main>

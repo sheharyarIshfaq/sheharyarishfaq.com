@@ -4,7 +4,7 @@ import { isReady, site } from "@/lib/site";
 import { CopyEmail } from "./CopyEmail";
 
 export function Contact() {
-  const { title, text, copyLabel, copiedLabel } = home.contact;
+  const { title, text, copyLabel, copiedLabel, bookCallLabel } = home.contact;
   const links = [
     ["LinkedIn", site.links.linkedin],
     ["GitHub", site.links.github],
@@ -31,6 +31,15 @@ export function Contact() {
         </div>
         <div className="relative flex flex-col gap-3">
           <CopyEmail email={site.email} label={copyLabel} copiedLabel={copiedLabel} />
+          <a
+            href={site.links.bookCall}
+            {...trackLink(site.links.bookCall)}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex min-h-14 items-center justify-center rounded-[16px] border-2 border-current px-5 text-[17px] font-bold transition-[scale] duration-300 active:scale-[0.98]"
+          >
+            {bookCallLabel}
+          </a>
           <ul className="flex justify-center gap-[22px] text-[15px] font-semibold">
             {links.map(([label, href]) => (
               <li key={label}>
