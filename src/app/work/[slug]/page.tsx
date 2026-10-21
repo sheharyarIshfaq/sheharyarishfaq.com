@@ -89,7 +89,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           mainEntityOfPage: absoluteUrl(path),
         }}
       />
-      <JsonLd data={breadcrumbs([{ name: "Work", path: "/#work" }, { name: meta.title, path }])} />
+      <JsonLd data={breadcrumbs([{ name: meta.title, path }])} />
     </main>
   );
 }
