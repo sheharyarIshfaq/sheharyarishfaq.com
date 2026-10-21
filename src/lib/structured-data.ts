@@ -3,6 +3,12 @@ import { absoluteUrl, isReady, PERSON_ID, site, SITE_URL, WEBSITE_ID } from "@/l
 
 const hackathon = work.projects.find((project) => project.slug === "bina")?.meta;
 
+const uetTaxila = {
+  "@type": "CollegeOrUniversity",
+  name: "University of Engineering and Technology, Taxila",
+  url: "https://www.uettaxila.edu.pk",
+};
+
 export const person = {
   "@type": "Person",
   "@id": PERSON_ID,
@@ -18,11 +24,26 @@ export const person = {
     addressLocality: "Paris",
     addressCountry: "FR",
   },
-  alumniOf: {
+  affiliation: {
     "@type": "CollegeOrUniversity",
     name: "Sorbonne Université",
+    url: "https://www.sorbonne-universite.fr",
   },
-  // A Role wrapper is schema.org's way to give a past job its title and dates.
+  // Role wrappers are schema.org's way to give a past degree or job its title and dates.
+  alumniOf: {
+    "@type": "OrganizationRole",
+    roleName: "BSc Computer Science student",
+    startDate: "2020",
+    endDate: "2024",
+    alumniOf: uetTaxila,
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "degree",
+    name: "BSc Computer Science",
+    recognizedBy: uetTaxila,
+    validFrom: "2024",
+  },
   worksFor: {
     "@type": "EmployeeRole",
     roleName: "Lead software engineer",
