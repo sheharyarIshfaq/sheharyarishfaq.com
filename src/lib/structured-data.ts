@@ -22,6 +22,18 @@ export const person = {
     "@type": "CollegeOrUniversity",
     name: "Sorbonne Université",
   },
+  // A Role wrapper is schema.org's way to give a past job its title and dates.
+  worksFor: {
+    "@type": "EmployeeRole",
+    roleName: "Lead software engineer",
+    startDate: "2024-10",
+    endDate: "2026-08",
+    worksFor: { "@type": "Organization", name: "Mavera", url: "https://mavera.io" },
+  },
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Lead software engineer",
+  },
   knowsAbout: ["LLM agents", "Retrieval", "Rust", "Kubernetes", "CUDA"],
   sameAs: [site.links.linkedin, site.links.github, site.links.medium, site.links.fiverr].filter(isReady),
   ...(hackathon && { award: `First place, ${hackathon}` }),
