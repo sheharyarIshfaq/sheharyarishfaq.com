@@ -124,12 +124,14 @@ type ReportFigureProps = {
   alt: string;
   caption: string;
   lead?: boolean;
+  priority?: boolean;
   sizes?: string;
 };
 
 // A figure from a report or a screenshot, served as WebP sizes written next to it in public/.
 // `lead` is for a figure placed before the first section, which needs the gap a section would have.
-export function ReportFigure({ src, widths, width, height, alt, caption, lead = false, sizes = "(min-width: 1024px) 690px, 100vw" }: ReportFigureProps) {
+// `priority` marks the figure that is the page's largest paint, so it loads first instead of lazily.
+export function ReportFigure({ src, widths, width, height, alt, caption, lead = false, priority = false, sizes = "(min-width: 1024px) 690px, 100vw" }: ReportFigureProps) {
   const srcSet = widths.map((size) => `${src}-${size}.webp ${size}w`).join(", ");
   return (
     <figure className={`m-0 flex flex-col gap-2.5 ${lead ? "mb-16 md:mb-24" : ""}`}>
@@ -140,7 +142,8 @@ export function ReportFigure({ src, widths, width, height, alt, caption, lead = 
         width={width}
         height={height}
         alt={alt}
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : undefined}
         decoding="async"
         className="h-auto w-full rounded-[22px] border border-line bg-white"
       />

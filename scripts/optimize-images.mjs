@@ -39,7 +39,7 @@ for (const [key, { aspect, widths }] of Object.entries(variants)) {
   for (const size of widths) {
     const resized = () => sharp(source).extract(region).resize(size);
     const outputs = [
-      [`${name}-${size}.avif`, (pipeline) => pipeline.avif({ quality: 55 })],
+      [`${name}-${size}.avif`, (pipeline) => pipeline.avif({ quality: 40, effort: 9 })],
       [`${name}-${size}.webp`, (pipeline) => pipeline.webp({ quality: 76 })],
       [`${name}-${size}.jpg`, (pipeline) => pipeline.jpeg({ quality: 80, mozjpeg: true })],
     ];
