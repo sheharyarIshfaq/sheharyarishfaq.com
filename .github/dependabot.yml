@@ -7,3 +7,9 @@ updates:
     groups:
       dependencies:
         patterns: ["*"]
+    # typescript-eslint doesn't support TypeScript 7 yet, and the Node types should match the Node 22 build.
+    ignore:
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
