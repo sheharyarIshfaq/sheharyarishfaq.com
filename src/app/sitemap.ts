@@ -7,8 +7,9 @@ export const dynamic = "force-static";
 
 // Only case studies carry a real content date; a build timestamp on every page would tell crawlers nothing.
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const indexed = routes.filter((route) => !route.noindex);
   return Promise.all(
-    routes.map(async (route) => ({
+    indexed.map(async (route) => ({
       url: absoluteUrl(route.path),
       ...(route.caseStudy && { lastModified: (await loadCaseStudy(route.caseStudy)).meta.published }),
     })),

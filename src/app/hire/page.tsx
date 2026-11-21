@@ -9,7 +9,8 @@ import { site } from "@/lib/site";
 
 const { title, description, heading, facts, contactText } = pages.hire;
 
-export const metadata = pageMetadata({ title, description, path: "/hire" });
+// Recruiters get this page by direct link; the internship dates stay out of search results.
+export const metadata = { ...pageMetadata({ title, description, path: "/hire" }), robots: { index: false, follow: false } };
 
 export default function HirePage() {
   return (
