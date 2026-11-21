@@ -1,10 +1,13 @@
 import home from "@content/home.json";
+import Link from "next/link";
 import { trackLink } from "@/lib/analytics";
 import { isReady, site } from "@/lib/site";
 import { CopyEmail } from "./CopyEmail";
 
-export function Contact() {
-  const { title, text, copyLabel, copiedLabel, bookCallLabel } = home.contact;
+export function Contact({ text = home.contact.text }: { text?: string }) {
+  const { title, hireLabel, copyLabel, copiedLabel, bookCallLabel } = home.contact;
+  // {hire} in the text marks where the link to the hire page goes.
+  const [beforeHire, afterHire] = text.split("{hire}");
   const links = [
     ["LinkedIn", site.links.linkedin],
     ["GitHub", site.links.github],
@@ -27,7 +30,17 @@ export function Contact() {
           <h2 id="contact-title" className="text-[38px] leading-[0.98] tracking-[-0.05em] font-stretch-[120%] md:text-[60px]">
             {title}
           </h2>
-          <p className="max-w-[520px] text-[17px] leading-[1.55] md:text-lg">{text}</p>
+          <p className="max-w-[520px] text-[17px] leading-[1.55] md:text-lg">
+            {beforeHire}
+            {afterHire !== undefined && (
+              <>
+                <Link href="/hire" className="underline decoration-2 underline-offset-4">
+                  {hireLabel}
+                </Link>
+                {afterHire}
+              </>
+            )}
+          </p>
         </div>
         <div className="relative flex flex-col gap-3">
           <CopyEmail email={site.email} label={copyLabel} copiedLabel={copiedLabel} />

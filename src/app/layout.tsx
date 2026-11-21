@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name, url: SITE_URL }],
   creator: site.name,
-  keywords: ["AI engineer", "LLM agents", "Rust", "Kubernetes", "Paris", "internship"],
+  keywords: ["AI engineer", "LLM agents", "Rust", "Kubernetes", "Paris"],
   formatDetection: { email: false, address: false, telephone: false },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,

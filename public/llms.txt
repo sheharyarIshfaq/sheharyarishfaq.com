@@ -1,11 +1,12 @@
 # Sheharyar Ishfaq
 
-> AI engineer in Paris. Lead engineer at Mavera for two years on an AI platform used by 120+ companies. MSc Computer Science at Sorbonne, Paris. Open to a six-month internship from 15 February 2027.
+> AI engineer in Paris. Lead engineer at Mavera for two years on an AI platform used by 120+ companies. MSc Computer Science at Sorbonne, Paris.
 
 I build AI agents and the systems they run on.
 
 ## Availability
 
+- Takes on freelance full-stack and AI projects.
 - Six-month internship in Paris, on site or hybrid, from 15 February 2027.
 - Sorbonne signs the convention de stage, so there's no visa paperwork on your side.
 - Email: hello@sheharyarishfaq.com

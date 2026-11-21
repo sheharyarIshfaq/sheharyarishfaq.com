@@ -97,13 +97,14 @@
       ["Languages", "English, French (learning)"],
       ["Strengths", "LLM agents, retrieval, Rust, Kubernetes"],
       ["Learning", "CUDA, MPI, PyTorch"],
-      ["Available", "From 15 February 2027"],
-      ["Paperwork", "Convention de stage"]
+      ["Available", "New projects and roles"],
+      ["Takes on", "Full-stack and AI projects"]
     ]
   },
   "contact": {
     "title": "Let's build something together.",
-    "text": "Six-month internship in Paris from 15 February 2027. Sorbonne signs the convention de stage, so there's no visa paperwork on your side. I reply within a day.",
+    "text": "Building something? I take on full-stack and AI projects. Hiring for a role? Dates and paperwork are on the {hire}. I reply within a day.",
+    "hireLabel": "Hire page",
     "copyLabel": "Copy my email",
     "copiedLabel": "Email copied",
     "bookCallLabel": "Book a 20-minute call"

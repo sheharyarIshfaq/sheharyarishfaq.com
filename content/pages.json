@@ -6,7 +6,17 @@
   },
   "hire": {
     "title": "Hire",
-    "description": "Sheharyar Ishfaq, AI engineer in Paris, is open to a six-month internship from 15 February 2027. Sorbonne signs the convention de stage, so no visa paperwork."
+    "description": "Sheharyar Ishfaq, AI engineer in Paris, is open to a six-month internship from 15 February 2027. Sorbonne signs the convention de stage, so no visa paperwork.",
+    "heading": "Open to a six-month internship from 15 February 2027",
+    "facts": [
+      ["Based in", "Paris"],
+      ["Languages", "English, French (learning)"],
+      ["Strengths", "LLM agents, retrieval, Rust, Kubernetes"],
+      ["Available", "From 15 February 2027"],
+      ["Where", "Paris, on site or hybrid"],
+      ["Paperwork", "Convention de stage"]
+    ],
+    "contactText": "Six-month internship in Paris from 15 February 2027. Sorbonne signs the convention de stage, so there's no visa paperwork on your side. I reply within a day."
   },
   "now": {
     "description": "What Sheharyar Ishfaq is doing now: final year of an MSc at Sorbonne, with GPU programming in CUDA, parallel computing with MPI and deep learning for vision."

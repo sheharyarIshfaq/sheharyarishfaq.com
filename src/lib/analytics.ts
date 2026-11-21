@@ -12,7 +12,7 @@ const outbound: [host: RegExp, name: string][] = [
 export function trackLink(href: string): EventAttributes | undefined {
   if (href.startsWith("mailto:")) return { "data-umami-event": "email-click" };
   if (href.startsWith("/cv/")) {
-    return { "data-umami-event": "cv-download", "data-umami-event-cv": href.includes("academic") ? "academic" : "internship" };
+    return { "data-umami-event": "cv-download", "data-umami-event-cv": href.includes("academic") ? "academic" : "main" };
   }
   if (href.endsWith("-report.pdf")) return { "data-umami-event": "report-download" };
 

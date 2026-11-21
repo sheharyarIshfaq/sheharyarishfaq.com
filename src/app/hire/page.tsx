@@ -7,21 +7,19 @@ import { isAvailable } from "@/lib/files";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
-const { title, description } = pages.hire;
+const { title, description, heading, facts, contactText } = pages.hire;
 
 export const metadata = pageMetadata({ title, description, path: "/hire" });
 
 export default function HirePage() {
-  const { availability } = site;
-
   return (
     <main id="main" className="container-page">
-      <PageHeader title={availability.pill}>
+      <PageHeader title={heading}>
         <p>{home.hero.summary}</p>
       </PageHeader>
 
       <dl className="grid gap-x-8 border-b border-line sm:grid-cols-2 lg:grid-cols-3">
-        {home.about.facts.map(([term, value]) => (
+        {facts.map(([term, value]) => (
           <div key={term} className="border-t border-line py-4">
             <dt className="text-[13px] text-ink-2">{term}</dt>
             <dd className="pt-0.5 text-[17px] font-bold">{value}</dd>
@@ -40,7 +38,7 @@ export default function HirePage() {
         </ButtonLink>
       </div>
 
-      <Contact />
+      <Contact text={contactText} />
     </main>
   );
 }

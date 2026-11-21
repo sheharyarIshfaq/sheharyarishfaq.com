@@ -9,6 +9,7 @@ import { site } from "@/lib/site";
 import { MadeWith } from "./MadeWith";
 
 const morePages = [
+  { href: "/hire", label: pages.hire.title },
   { href: "/now", label: home.now.title },
   { href: "/research", label: pages.research.title },
   { href: "/colophon", label: pages.colophon.title },
