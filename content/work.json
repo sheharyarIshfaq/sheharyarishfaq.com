@@ -38,7 +38,7 @@
       "stamp": "First place, team of five",
       "context": "Hosted by Mistral AI, sponsored by Stanford Law School, Legora, Hector AI, Jus Mundi and Sciences Po.",
       "link": { "label": "See the project", "href": "/work/bina" },
-      "repo": "https://github.com/sheharyarIshfaq/LAWxMISTRAL-Hackathon-Backend",
+      "repo": "https://github.com/sheharyarIshfaq/bina-ai",
       "figure": "quote-check",
       "paragraph": "Bina turns French data-protection rulings into briefs for litigation funders. A funder can't act on a brief that misquotes the ruling, so the backend I built checks every quoted sentence, word for word, against the original, and keeps any it can't find out of the pitch.",
       "quoteCheck": {

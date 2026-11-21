@@ -40,9 +40,9 @@
   "numbers": {
     "title": "In numbers",
     "items": [
-      { "value": 100, "prefix": "$", "suffix": "K+", "label": "Monthly revenue", "context": "Carried by the platform I led at Mavera." },
-      { "value": 165, "label": "Client projects", "context": "Shipped as a freelancer, rated 4.9." },
-      { "text": "1st", "label": "Mistral hackathon", "context": "LLM × Law, Paris, October 2026." },
+      { "value": 120, "suffix": "+", "label": "Companies", "context": "Use the platform I built and led at Mavera.", "href": "https://mavera.io" },
+      { "value": 165, "label": "Client projects", "context": "Shipped as a freelancer, rated 4.9.", "href": "https://www.fiverr.com/sheharyar__" },
+      { "text": "1st", "label": "Mistral hackathon", "context": "LLM × Law, Paris, October 2026.", "href": "https://clp.law.stanford.edu/2026/11/09/building-ai-native-tools-for-the-future-law-firm-report-from-the-2nd-llm-x-law-hackathon-in-paris/" },
       { "text": "1/17", "label": "System Design", "context": "Top of the class at Sorbonne." }
     ]
   },
@@ -59,7 +59,7 @@
       "2": { "links": [[3, 0.62], [1, 0.25]], "note": "points at the models I have put into production.", "evidence": [["OpenAI and Anthropic", 0.33, "In production at Mavera"], ["38 models, 5 providers", 0.29, "Routed by one platform in AIWrappers"], ["Mistral OCR and chat", 0.26, "Inside the Bina.ai backend"]] },
       "3": { "links": [[2, 0.42], [1, 0.3], [8, 0.2]], "note": "means agents that call tools, read documents and stream answers.", "evidence": [["Mave Agent", 0.41, "A Tauri desktop agent"], ["MCP servers", 0.24, "Tools for meetings and video"], ["AIWrappers creator agent", 0.2, "Builds apps from a description"]] },
       "6": { "links": [[3, 0.4], [8, 0.38], [1, 0.14]], "note": "is where the agents run, and what I am studying next.", "evidence": [["Kubernetes on AWS", 0.38, "Operated at Mavera"], ["CUDA and MPI", 0.22, "Sorbonne M2, this year"], ["Caracat at LIP6", 0.2, "Rust networking, 86/100"]] },
-      "8": { "links": [[6, 0.46], [3, 0.32], [7, 0.12]], "note": "means real users depending on it.", "evidence": [["120+ companies", 0.42, "Using Mavera every day"], ["$100K+ a month", 0.28, "Revenue the platform carried"], ["16 restaurants", 0.18, "Running on the Gourmet Gulf platform"]] }
+      "8": { "links": [[6, 0.46], [3, 0.32], [7, 0.12]], "note": "means real users depending on it.", "evidence": [["120+ companies", 0.42, "Using Mavera every day"], ["A team under me", 0.28, "Developers who joined Mavera later"], ["16 restaurants", 0.18, "Running on the Gourmet Gulf platform"]] }
     },
     "disclaimer": "Weights are hand-set to tell the story, not output from a real model. Do not label them as model output anywhere."
   },
@@ -69,7 +69,7 @@
       { "quote": "He moves quickly, asks sharp questions, and has a strong ability to take early ideas or partial direction and turn them into well-structured, working systems.", "name": "Jill Axline, PhD", "role": "Co-founder and CEO, Mavera", "style": "featured" },
       { "quote": "Sheharyar is the kind of person you can trust with the hard stuff. He's thoughtful, dependable, and quietly makes everyone around him better.", "name": "Bill Hickman", "role": "Founder, Hybrid Minds; former Chief Growth Officer, Leo Burnett Worldwide", "style": "plain" }
     ],
-    "more": { "label": "Read the full recommendations on LinkedIn", "href": "https://www.linkedin.com/in/sheharyar-ishfaq/details/recommendations/" }
+    "more": { "label": "Read on LinkedIn", "href": "https://www.linkedin.com/in/sheharyar-ishfaq/details/recommendations/" }
   },
   "now": {
     "title": "Now",

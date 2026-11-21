@@ -52,7 +52,7 @@ export function HardCall({ number, title, children }: { number: string; title: s
 }
 
 export function Stats({ children }: { children: ReactNode }) {
-  return <div className="mb-16 grid border-y border-line sm:grid-cols-3 md:mb-24">{children}</div>;
+  return <div className="mb-16 grid border-y border-line sm:auto-cols-fr sm:grid-flow-col md:mb-24">{children}</div>;
 }
 
 export function Stat({ value, label, children }: { value: string; label: string; children: ReactNode }) {

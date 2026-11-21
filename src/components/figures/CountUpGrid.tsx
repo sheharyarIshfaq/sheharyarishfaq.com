@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackLink } from "@/lib/analytics";
 import { useInView } from "@/lib/hooks/useInView";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 
@@ -11,6 +12,8 @@ export type NumberItem = {
   text?: string;
   label: string;
   context: string;
+  // Where the claim can be checked.
+  href?: string;
 };
 
 const DELAY_MS = 600;
@@ -60,7 +63,15 @@ export function CountUpGrid({ items }: { items: NumberItem[] }) {
             {display(item, shown)}
           </span>
           <span className="pt-2.5 text-base font-bold">{item.label}</span>
-          <span className="text-sm leading-[1.45] text-ink-2">{item.context}</span>
+          <span className="text-sm leading-[1.45] text-ink-2">
+            {item.href ? (
+              <a href={item.href} {...trackLink(item.href)} target="_blank" rel="noopener" className="text-link">
+                {item.context}
+              </a>
+            ) : (
+              item.context
+            )}
+          </span>
         </li>
       ))}
     </ul>
