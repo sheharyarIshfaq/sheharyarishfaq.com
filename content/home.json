@@ -40,7 +40,7 @@
   "numbers": {
     "title": "In numbers",
     "items": [
-      { "value": 120, "suffix": "+", "label": "Companies", "context": "Use the platform I built and led at Mavera.", "href": "https://mavera.io" },
+      { "value": 100, "prefix": "$", "suffix": "K+", "label": "Monthly revenue", "context": "The platform I built and led reached $100K+ in monthly recurring revenue." },
       { "value": 165, "label": "Client projects", "context": "Shipped as a freelancer, rated 4.9.", "href": "https://www.fiverr.com/sheharyar__" },
       { "text": "1st", "label": "Mistral hackathon", "context": "LLM × Law, Paris, October 2026.", "href": "https://clp.law.stanford.edu/2026/11/09/building-ai-native-tools-for-the-future-law-firm-report-from-the-2nd-llm-x-law-hackathon-in-paris/" },
       { "text": "1/17", "label": "System Design", "context": "Top of the class at Sorbonne." }
