@@ -7,6 +7,7 @@ const outbound: [host: RegExp, name: string][] = [
   [/(^|\.)medium\.com$/, "medium"],
   [/(^|\.)(youtube\.com|youtu\.be)$/, "youtube"],
   [/(^|\.)fiverr\.com$/, "fiverr"],
+  [/(^|\.)upwork\.com$/, "upwork"],
 ];
 
 export function trackLink(href: string): EventAttributes | undefined {

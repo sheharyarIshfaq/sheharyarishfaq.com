@@ -21,6 +21,7 @@
     "github": "https://github.com/sheharyarIshfaq",
     "medium": "https://medium.com/@sheharyarishfaq",
     "fiverr": "https://www.fiverr.com/sheharyar__",
+    "upwork": "https://www.upwork.com/freelancers/sheharyarishfaq",
     "aivex": "https://aivex.co",
     "bookCall": "https://cal.com/sheharyar-ishfaq/intro",
     "cv": "/cv/Sheharyar_Ishfaq_CV.pdf",
@@ -33,7 +34,8 @@
     { "label": "CV", "href": "/cv/Sheharyar_Ishfaq_CV.pdf" }
   ],
   "images": {
-    "hero": { "src": "/images/hero-hangar.jpg", "alt": "Sheharyar Ishfaq in a hangar beside a Rafale prototype", "objectPosition": "50% 72%" },
+    "headshot": { "src": "/images/headshot.jpg", "alt": "Sheharyar Ishfaq" },
+    "hero": { "src": "/images/hero-hangar.jpg", "alt": "Sheharyar Ishfaq, AI engineer", "objectPosition": "50% 72%" },
     "about": { "src": "/images/about-big.jpg", "alt": "Sheharyar Ishfaq at BIG, the Bpifrance gathering of entrepreneurs at the Accor Arena in Paris", "objectPosition": "14% 50%", "caption": "At BIG by Bpifrance, Accor Arena, Paris.", "captionHref": "https://big.bpifrance.fr/fr" },
     "formal": { "src": "/images/portrait-formal.jpg", "alt": "Sheharyar Ishfaq, portrait", "note": "Not used on the homepage. Keep for press, applications or the /hire page if needed." }
   }

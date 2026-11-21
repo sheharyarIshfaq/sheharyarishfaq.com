@@ -1,7 +1,4 @@
-import work from "@content/work.json";
 import { absoluteUrl, isReady, PERSON_ID, site, SITE_URL, WEBSITE_ID } from "@/lib/site";
-
-const hackathon = work.projects.find((project) => project.slug === "bina")?.meta;
 
 const uetTaxila = {
   "@type": "CollegeOrUniversity",
@@ -17,19 +14,25 @@ export const person = {
   jobTitle: "AI engineer",
   description: site.seo.description,
   url: SITE_URL,
-  image: absoluteUrl(site.images.formal.src),
+  image: absoluteUrl(site.images.headshot.src),
   email: `mailto:${site.email}`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Paris",
     addressCountry: "FR",
   },
+  // Role wrappers are schema.org's way to give a degree or job its title and dates.
   affiliation: {
-    "@type": "CollegeOrUniversity",
-    name: "Sorbonne Université",
-    url: "https://www.sorbonne-universite.fr",
+    "@type": "OrganizationRole",
+    roleName: "MSc Computer Science student",
+    startDate: "2025",
+    endDate: "2027",
+    affiliation: {
+      "@type": "CollegeOrUniversity",
+      name: "Sorbonne Université",
+      url: "https://www.sorbonne-universite.fr",
+    },
   },
-  // Role wrappers are schema.org's way to give a past degree or job its title and dates.
   alumniOf: {
     "@type": "OrganizationRole",
     roleName: "BSc Computer Science student",
@@ -56,8 +59,8 @@ export const person = {
     name: "Lead software engineer",
   },
   knowsAbout: ["LLM agents", "Retrieval", "Rust", "Kubernetes", "CUDA"],
-  sameAs: [site.links.linkedin, site.links.github, site.links.medium, site.links.fiverr].filter(isReady),
-  ...(hackathon && { award: `First place, ${hackathon}` }),
+  sameAs: [site.links.linkedin, site.links.github, site.links.medium, site.links.fiverr, site.links.upwork].filter(isReady),
+  award: "1st place, Mistral LLM x Law Hackathon Paris #2, October 2026",
 };
 
 // Pages other than the homepage don't carry the full Person, so references to it repeat the name and URL.

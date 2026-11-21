@@ -5,5 +5,5 @@ export const dynamic = "force-static";
 
 // A route ending in .png, so static hosts serve the export with an image content type.
 export function GET() {
-  return ogImage({ title: home.hero.bios[0] });
+  return ogImage({ title: home.hero.bios[0], photo: "og-headshot.jpg" });
 }

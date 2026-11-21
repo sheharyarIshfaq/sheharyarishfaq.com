@@ -20,7 +20,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm build
 
-      # LinkedIn, Medium and Fiverr refuse requests from bots, so their links always look broken.
+      # LinkedIn, Medium, Fiverr and Upwork refuse requests from bots, so their links always look broken.
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
@@ -30,6 +30,7 @@ jobs:
             --exclude linkedin.com
             --exclude medium.com
             --exclude fiverr.com
+            --exclude upwork.com
             --no-progress
             'out/**/*.html'
           fail: true

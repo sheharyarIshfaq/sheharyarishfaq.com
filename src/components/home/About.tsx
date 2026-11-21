@@ -23,6 +23,9 @@ export function About() {
         </figcaption>
       </figure>
       <div className="flex flex-col gap-5">
+        <div className="size-[72px] overflow-hidden rounded-full border border-line">
+          <Picture image="headshot" sizes="72px" className="size-full object-cover" />
+        </div>
         <h2 id="about-title" className="text-[32px] leading-[1.02] md:text-[46px]">
           {title}
         </h2>

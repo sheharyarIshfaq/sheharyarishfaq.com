@@ -11,15 +11,16 @@ function asset(path: string) {
 type OgImageProps = {
   title: string;
   number?: string;
+  photo?: "og-photo.jpg" | "og-headshot.jpg";
 };
 
 // next/og can't apply font-stretch, so the wide headline face is a static instance at wdth 118.
-export async function ogImage({ title, number }: OgImageProps) {
+export async function ogImage({ title, number, photo: photoFile = "og-photo.jpg" }: OgImageProps) {
   const [wide, regular, doto, photo] = await Promise.all([
     asset("fonts/archivo-850-118.woff"),
     asset("fonts/archivo-400.woff"),
     asset("fonts/doto-900.woff"),
-    asset("og-photo.jpg"),
+    asset(photoFile),
   ]);
 
   return new ImageResponse(

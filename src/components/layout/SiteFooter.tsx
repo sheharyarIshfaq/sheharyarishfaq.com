@@ -21,6 +21,7 @@ const elsewhere = [
   { href: site.links.github, label: "GitHub" },
   { href: site.links.medium, label: "Medium" },
   { href: site.links.fiverr, label: "Fiverr" },
+  { href: site.links.upwork, label: "Upwork" },
   { href: site.links.cv, label: "CV" },
 ].filter((link) => isAvailable(link.href));
 
